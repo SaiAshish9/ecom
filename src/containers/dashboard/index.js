@@ -4,9 +4,71 @@ import Grid from '@material-ui/core/Grid'
 import withStyles from '@material-ui/core/styles/withStyles'
 import Paper from '@material-ui/core/Paper'
 import IconButton from '@material-ui/core/IconButton'
-import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
+
+import {IoIosSpeedometer,IoIosDocument} from 'react-icons/io'
+import LoyaltyIcon from '@material-ui/icons/Loyalty';
+import {FaBoxOpen,FaUserCircle,FaStore,FaUsers,FaAppStoreIos} from 'react-icons/fa'
+import {AiFillAppstore} from 'react-icons/ai'
+import LaptopMacIcon from '@material-ui/icons/LaptopMac';
+import {FiSettings} from 'react-icons/fi'
+import {RiLogoutBoxRLine} from 'react-icons/ri'
 
 const Dashboard = ({classes}) => {
+
+
+const icons=[
+   
+    {
+        icon:<IoIosSpeedometer/>,
+        path:''
+    },
+    {
+        icon:<AiFillAppstore/>,
+        path:''
+    },
+    {
+        icon:<LoyaltyIcon/>,
+        path:''
+    },
+    {
+        icon:<FaBoxOpen/>,
+        path:''
+    },
+    {
+        icon:<FaUsers/>,
+        path:''
+    },
+    {
+        icon:<IoIosDocument/>,
+        path:''
+    },
+    {
+        icon:<FaAppStoreIos/>,
+        path:''
+    },
+    {
+        icon:<LaptopMacIcon/>,
+        path:''
+    },
+    {
+        icon:<FaStore/>,
+        path:''
+    },
+    {
+        icon:<FaUserCircle/>,
+        path:''
+    },
+    {
+        icon:<FiSettings/>,
+        path:''
+    },
+    {
+        icon:<RiLogoutBoxRLine/>,
+        path:''
+    }
+
+]
+
     return (
         <React.Fragment>
             <Navbar/>
@@ -19,16 +81,20 @@ const Dashboard = ({classes}) => {
 
 <Grid className={classes.icons}>
 
-<IconButton className={[classes.activeIconBtn,classes.iconBtn]}>
-<ChildFriendlyIcon  className={classes.icon} style={{color:'#52565e'}}  />  
-</IconButton>
+
 
 {
-    [...Array(11).keys()].map((i,k)=>(
+    icons.map((i,k)=>{
+  return  k==0?(
+<IconButton className={[classes.activeIconBtn,classes.iconBtn]}>
+{i.icon}
+</IconButton>
+    ):(
     <IconButton key={k} className={classes.iconBtn} >
-      <ChildFriendlyIcon  className={classes.icon} />  
+{i.icon}
     </IconButton>
-    ))
+    )
+    })
 }
 
 </Grid>
@@ -73,17 +139,16 @@ icons:{
     alignItems:'center',
     justifyContent:'space-around'
 },
-icon:{
-color:'#babbbf',
-'&:hover':{
-    color:'#52565e',
-}
-},
 iconBtn:{
     width:'100%',
-    borderRadius:'0px'
+    borderRadius:'0px',
+    color:'#babbbf',
+    '&:hover':{
+        color:'#52565e',
+    }
 },
 activeIconBtn:{
+color:'#52565e',
 background:theme.palette.primary.iconBtnBackground,
 borderLeft:`5px solid ${theme.palette.primary.main}`
 }
