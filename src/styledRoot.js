@@ -8,12 +8,12 @@ const theme=createMuiTheme({
     palette:{
         // type:'dark',
         background:{
-           default:'#ffcb45'
+           default:'#fff'
         },
         primary:{
             main:'#ffc845',
-            dark:'',
-            light:''
+            dashboardBackground:'#f7f7f7',
+            iconBtnBackground:'#fef8e9'
                 },
         secondary:{
             main:'#ffc845'

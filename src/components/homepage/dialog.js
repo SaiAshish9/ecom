@@ -1,16 +1,17 @@
 import React,{useState,useContext,useEffect} from 'react';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
-import {FormDialogContext} from '../../App'
+import {FormDialogContext} from '../../contexts/FormDialog'
 import IconButton from '@material-ui/core/IconButton'
 import withStyles from '@material-ui/core/styles/withStyles';
 import Container from '@material-ui/core/Container'
 import ClearIcon from '@material-ui/icons/Clear';
 import Typography from '@material-ui/core/Typography'
 import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
+import {withRouter} from 'react-router-dom'
 
 
-const FormDialog=({classes,width})=> {
+const FormDialog=({classes,width,history})=> {
 
 
     const [email,setEmail]=useState('')
@@ -34,7 +35,8 @@ useEffect(()=>{
 
   
 
-      <Dialog fullScreen={small && true}	 disableBackdropClick={true}  maxWidth='sm' open={display}    >
+      <Dialog fullScreen={small && true}
+      disableBackdropClick={true}  maxWidth='sm' open={display}    >
    
          
 
@@ -58,6 +60,7 @@ onSubmit={e=>{
     console.log(email,password)
     setEmail('')
     setPassword('')
+    history.push('/dashboard')
 }}
 >
 
@@ -213,4 +216,4 @@ btn:{
 
 })
 
-export default withWidth()(withStyles(styles)(FormDialog))
+export default withRouter(withWidth()(withStyles(styles)(FormDialog)))

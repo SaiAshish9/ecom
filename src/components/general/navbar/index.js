@@ -3,7 +3,7 @@ import Typography from '@material-ui/core/Typography'
 import withStyles from '@material-ui/core/styles/withStyles'
 import Button from '@material-ui/core/Button'
 
-import {FormDialogContext} from '../../../App'
+import {FormDialogContext} from '../../../contexts/FormDialog'
 
 
 
