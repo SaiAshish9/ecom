@@ -33,7 +33,7 @@ const App=({classes})=> {
 
 <Grid container  style={{width: '100vw',height:'90vh'}} >
 
-<Grid item  xs={12} sm={12} lg={5}  style={{display: 'flex',marginLeft:'8vw',justifyContent:'center',flexDirection:'column'}}  component="div"  >
+<Grid item  xs={12} sm={12} lg={5}  style={{minHeight:'50vh',display: 'flex',marginLeft:'8vw',justifyContent:'center',flexDirection:'column'}}  component="div"  >
 
 
 <Typography variant="h3" style={{color:'white'}}> 

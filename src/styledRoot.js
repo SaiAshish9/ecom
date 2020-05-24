@@ -8,7 +8,7 @@ const theme=createMuiTheme({
     palette:{
         // type:'dark',
         background:{
-           default:'white'
+           default:'#ffcb45'
         },
         primary:{
             main:'#ffc845',
@@ -20,7 +20,8 @@ const theme=createMuiTheme({
         }
     },
     typography:{
-        useNextVariants:true
+        useNextVariants:true,
+        fontFamily:"'Poppins', sans-serif"
     }
 })
 

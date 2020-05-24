@@ -1,4 +1,4 @@
-import React,{useState,useContext} from 'react';
+import React,{useState,useContext,useEffect} from 'react';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import {FormDialogContext} from '../../App'
@@ -7,18 +7,29 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import Container from '@material-ui/core/container'
 import ClearIcon from '@material-ui/icons/Clear';
 import Typography from '@material-ui/core/typography'
-
-const FormDialog=({classes})=> {
-
+import withWidth, { isWidthUp,isWidthDown } from '@material-ui/core/withWidth';
 
 
-const {display,toggleFormDisplay}=useContext(FormDialogContext)
+const FormDialog=({classes,width})=> {
+
+    const [small,setSmall]=useState(false)
+
+useEffect(()=>{
+    if(isWidthDown('xs',width)){
+        setSmall(true)
+    }else{
+        setSmall(false)
+    }
+},[width])
+
+
+    const {display,toggleFormDisplay}=useContext(FormDialogContext)
 
   return (
 
   
 
-      <Dialog open={!display}    >
+      <Dialog fullScreen={small && true}	 disableBackdropClick={true}  maxWidth='sm' open={display}    >
    
          
 
@@ -125,11 +136,17 @@ const styles=theme=>({
 form:{
     width:'28vw',
     height:'80vh',
+    minWidth:'20rem',
     background:'white',
     display:'flex',
     flexDirection:'column',
     // alignItems:'center',
-    justifyContent:'center'
+    justifyContent:'center',
+    [theme.breakpoints.down('sm')]:{
+        maxWidth:'3rem',
+        height:'70vh',
+        marginTop:'10vh'
+    }
 
 
 },
@@ -138,10 +155,14 @@ clear:{
     background:'#eee',
     padding:5,
     position:'absolute',
-    left:'26vw',
+    right:'0vw',
     zIndex:1,
     '&:hover':{
         'background':'#eee'
+    },
+    [theme.breakpoints.down('xs')]:{
+        position:'absolute',
+        right:'6vw'
     }
 },
 btn:{
@@ -157,4 +178,4 @@ btn:{
 
 })
 
-export default withStyles(styles)(FormDialog)
+export default withWidth()(withStyles(styles)(FormDialog))
