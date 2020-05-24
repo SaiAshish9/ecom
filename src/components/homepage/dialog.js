@@ -7,11 +7,13 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import Container from '@material-ui/core/container'
 import ClearIcon from '@material-ui/icons/Clear';
 import Typography from '@material-ui/core/typography'
-import withWidth, { isWidthUp,isWidthDown } from '@material-ui/core/withWidth';
+import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 
 
 const FormDialog=({classes,width})=> {
 
+
+    // const [email,setEmail]
     const [small,setSmall]=useState(false)
 
 useEffect(()=>{
