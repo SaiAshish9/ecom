@@ -4,9 +4,9 @@ import Dialog from '@material-ui/core/Dialog';
 import {FormDialogContext} from '../../App'
 import IconButton from '@material-ui/core/IconButton'
 import withStyles from '@material-ui/core/styles/withStyles';
-import Container from '@material-ui/core/container'
+import Container from '@material-ui/core/Container'
 import ClearIcon from '@material-ui/icons/Clear';
-import Typography from '@material-ui/core/typography'
+import Typography from '@material-ui/core/Typography'
 import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 
 
