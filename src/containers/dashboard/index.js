@@ -13,58 +13,60 @@ import LaptopMacIcon from '@material-ui/icons/LaptopMac';
 import {FiSettings} from 'react-icons/fi'
 import {RiLogoutBoxRLine} from 'react-icons/ri'
 
-const Dashboard = ({classes}) => {
+import {withRouter} from 'react-router-dom'
+
+const Dashboard = ({classes,history}) => {
 
 
 const icons=[
    
     {
         icon:<IoIosSpeedometer/>,
-        path:''
+        path:'/dashboard'
     },
     {
         icon:<AiFillAppstore/>,
-        path:''
+        path:'/dashboard/orders'
     },
     {
         icon:<LoyaltyIcon/>,
-        path:''
+        path:'/dashboard/product'
     },
     {
         icon:<FaBoxOpen/>,
-        path:''
+        path:'/dashboard/categories'
     },
     {
         icon:<FaUsers/>,
-        path:''
+        path:'/dashboard/customers'
     },
     {
         icon:<IoIosDocument/>,
-        path:''
+        path:'/dashboard/coupons'
     },
     {
         icon:<FaAppStoreIos/>,
-        path:''
+        path:'/dashboard/apps'
     },
     {
         icon:<LaptopMacIcon/>,
-        path:''
+        path:'/dashboard/services'
     },
     {
         icon:<FaStore/>,
-        path:''
+        path:'/dashboard/store'
     },
     {
         icon:<FaUserCircle/>,
-        path:''
+        path:'/dashboard/users'
     },
     {
         icon:<FiSettings/>,
-        path:''
+        path:'/dashboard/settings'
     },
     {
         icon:<RiLogoutBoxRLine/>,
-        path:''
+        path:'/'
     }
 
 ]
@@ -85,12 +87,16 @@ const icons=[
 
 {
     icons.map((i,k)=>{
-  return  k==0?(
-<IconButton className={[classes.activeIconBtn,classes.iconBtn]}>
+  return  history.location.pathname===i.path ?(
+<IconButton 
+onClick={()=>history.push(i.path)}
+className={[classes.activeIconBtn,classes.iconBtn]}>
 {i.icon}
 </IconButton>
     ):(
-    <IconButton key={k} className={classes.iconBtn} >
+    <IconButton
+    onClick={()=>history.push(i.path)}
+    key={k} className={classes.iconBtn} >
 {i.icon}
     </IconButton>
     )
@@ -106,7 +112,11 @@ const icons=[
 </Grid>
 
 <Grid style={{margin: 'auto'}}>
-Dashboard
+
+{
+history.location.pathname.split('/').slice(-1)
+}
+
 </Grid>
 
 </Grid>
@@ -155,4 +165,4 @@ borderLeft:`5px solid ${theme.palette.primary.main}`
 
 })
 
-export default withStyles(styles)(Dashboard)
+export default withRouter(withStyles(styles)(Dashboard))

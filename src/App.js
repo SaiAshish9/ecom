@@ -13,7 +13,18 @@ const App=({classes})=> {
 <Switch>
 
 <Route exact path="/" component={Auth}/>
-<Route path="/dashboard" component={Dashboard}/>
+<Route exact path="/dashboard" component={Dashboard}/>
+<Route  path="/dashboard/orders" component={Dashboard}/>
+<Route  path="/dashboard/product" component={Dashboard}/>
+<Route  path="/dashboard/categories" component={Dashboard}/>
+<Route  path="/dashboard/customers" component={Dashboard}/>
+<Route  path="/dashboard/coupons" component={Dashboard}/>
+<Route  path="/dashboard/apps" component={Dashboard}/>
+<Route  path="/dashboard/services" component={Dashboard}/>
+<Route  path="/dashboard/store" component={Dashboard}/>
+<Route  path="/dashboard/users" component={Dashboard}/>
+<Route  path="/dashboard/settings" component={Dashboard}/>
+
 
 </Switch>
 );
