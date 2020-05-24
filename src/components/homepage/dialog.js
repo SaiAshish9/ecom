@@ -13,7 +13,10 @@ import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 const FormDialog=({classes,width})=> {
 
 
-    // const [email,setEmail]
+    const [email,setEmail]=useState('')
+    const [password,setPassword]=useState('')
+
+
     const [small,setSmall]=useState(false)
 
 useEffect(()=>{
@@ -31,7 +34,7 @@ useEffect(()=>{
 
   
 
-      <Dialog fullScreen={small && true}	 disableBackdropClick={true}  maxWidth='sm' open={display}    >
+      <Dialog fullScreen={small && true}	 disableBackdropClick={true}  maxWidth='sm' open={!display}    >
    
          
 
@@ -48,14 +51,27 @@ useEffect(()=>{
     Welcome Back
 </Typography>
 
+<form
+
+onSubmit={e=>{
+    e.preventDefault()
+    console.log(email,password)
+    setEmail('')
+    setPassword('')
+}}
+>
+
 
 <Typography component="div" style={{textTransform: 'uppercase',color:'#999',marginLeft:'2vw'}}>
-    <Typography variant="p">
+    <Typography component="p">
     Email
     </Typography>
 <br/>
    <input
      type="email"
+     className={classes.input}
+     value={email}
+     onChange={e=>setEmail(e.target.value)}
      style={{
          width:'90%',
          height:'6vh',
@@ -73,12 +89,17 @@ useEffect(()=>{
 
 
 <Typography component="div" style={{textTransform: 'uppercase',color:'#999',marginLeft:'2vw',marginTop:'2vh'}}>
-    <Typography variant="p">
+    <Typography component="p">
     Password
     </Typography>
 <br/>
    <input
+    className={classes.input}
      type="password"
+     value={password}
+     onChange={e=>{
+         setPassword(e.target.value)
+        }}
      style={{
          width:'90%',
          height:'6vh',
@@ -106,7 +127,9 @@ Forgot Password?
 </Typography>
 
 
-<Button className={classes.btn} variant="contained" color="primary" disableElevation>
+<Button 
+type="submit"
+className={classes.btn} variant="contained" color="primary" disableElevation>
   Login
 </Button>
 
@@ -121,7 +144,11 @@ Forgot Password?
     Sign Up
 </Typography>
 
+
 </Typography>
+
+</form>
+
 
           </Container>
 
@@ -138,7 +165,7 @@ const styles=theme=>({
 form:{
     width:'28vw',
     height:'80vh',
-    minWidth:'20rem',
+    minWidth:'27rem',
     background:'white',
     display:'flex',
     flexDirection:'column',
@@ -149,9 +176,15 @@ form:{
         height:'70vh',
         marginTop:'10vh'
     }
+},
 
+input:{
+
+outline:'none',
+color:'#999'
 
 },
+
 clear:{
     color:'#515151',
     background:'#eee',
@@ -170,7 +203,7 @@ clear:{
 btn:{
     width:'70%',
     height:'6.5vh',
-    margin:'5px auto',
+    margin:'7px 12%',
     borderRadius:20,
     fontWeight: 'bold',
     '&:hover':{
