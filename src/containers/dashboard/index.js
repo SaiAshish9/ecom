@@ -14,6 +14,8 @@ import {FiSettings} from 'react-icons/fi'
 import {RiLogoutBoxRLine} from 'react-icons/ri'
 import Typography from '@material-ui/core/Typography'
 
+import Container from '@material-ui/core/Container'
+
 import {withRouter} from 'react-router-dom'
 
 import Store from '../../components/dashboard/store'
@@ -76,16 +78,16 @@ const icons=[
 ]
 
     return (
-        <React.Fragment>
+        <Grid>
             <Navbar/>
 
-<Grid component="div" className={classes.grid} >
+<Grid container className={classes.grid} >
 
-<Grid component="div" className={classes.sidebar}>
+<Grid container className={classes.sidebar}>
 
 <Paper className={classes.sidebarPaper}>
 
-<Grid className={classes.icons}>
+<Grid container className={classes.icons}>
 
 
 
@@ -131,25 +133,27 @@ history.location.pathname.split('/').includes('store')?(
 
 </Grid>
 
-        </React.Fragment>
+        </Grid>
     )
 }
 
 const styles=theme=>({
 
 grid:{
-    height:'91vh',
-    width:'100vw',
+    height:'121vh',
+    width:'100%',
     background:theme.palette.primary.dashboardBackground,
     display:'flex',
-    overflowY:'hidden'
+    overflow:'hidden',
+    maxWidth:'100%'
+    // bottom:0
 },
 sidebar:{
-    height:'91vh',
+    height:'121vh',
     width:'4rem'
 },
 sidebarPaper:{
-    height:'91vh',
+    height:'121vh',
     width:'100%',
     paddingTop:'5vh'
 },

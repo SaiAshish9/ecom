@@ -71,7 +71,9 @@ className={classes.btn} variant="contained" color="primary" disableElevation>
 const styles=theme=>({
     nav:{
         width: '100vw',
-        height: '9vh'
+        height: '9vh',
+        maxWidth:'100%',
+        overflowX:'none'
     },
     grid:{
         height: '9vh',
