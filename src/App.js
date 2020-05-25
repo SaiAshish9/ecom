@@ -21,7 +21,19 @@ const App=({classes})=> {
 <Route  path="/dashboard/coupons" component={Dashboard}/>
 <Route  path="/dashboard/apps" component={Dashboard}/>
 <Route  path="/dashboard/services" component={Dashboard}/>
-<Route  path="/dashboard/store" component={Dashboard}/>
+
+
+<Route exact path="/dashboard/store" component={Dashboard}/>
+<Route  path="/dashboard/store/theme" component={Dashboard}/>
+<Route  path="/dashboard/store/domain" component={Dashboard}/>
+<Route  path="/dashboard/store/shipping" component={Dashboard}/>
+<Route  path="/dashboard/store/locations" component={Dashboard}/>
+<Route  path="/dashboard/store/payment" component={Dashboard}/>
+<Route  path="/dashboard/store/products" component={Dashboard}/>
+
+
+
+
 <Route  path="/dashboard/users" component={Dashboard}/>
 <Route  path="/dashboard/settings" component={Dashboard}/>
 

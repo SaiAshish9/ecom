@@ -37,7 +37,7 @@ useEffect(()=>{
 
       <Dialog fullScreen={small && true}
       disableBackdropClick={true}  maxWidth='sm' 
-      open={!display}    >
+      open={display}    >
    
          
 

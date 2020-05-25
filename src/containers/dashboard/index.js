@@ -12,8 +12,11 @@ import {AiFillAppstore} from 'react-icons/ai'
 import LaptopMacIcon from '@material-ui/icons/LaptopMac';
 import {FiSettings} from 'react-icons/fi'
 import {RiLogoutBoxRLine} from 'react-icons/ri'
+import Typography from '@material-ui/core/Typography'
 
 import {withRouter} from 'react-router-dom'
+
+import Store from '../../components/dashboard/store'
 
 const Dashboard = ({classes,history}) => {
 
@@ -54,7 +57,8 @@ const icons=[
     },
     {
         icon:<FaStore/>,
-        path:'/dashboard/store'
+        path:'/dashboard/store',
+        name:'store'
     },
     {
         icon:<FaUserCircle/>,
@@ -87,7 +91,7 @@ const icons=[
 
 {
     icons.map((i,k)=>{
-  return  history.location.pathname===i.path ?(
+  return  history.location.pathname.split('/').includes(i.name) ?(
 <IconButton 
 onClick={()=>history.push(i.path)}
 className={[classes.activeIconBtn,classes.iconBtn]}>
@@ -111,13 +115,19 @@ className={[classes.activeIconBtn,classes.iconBtn]}>
 
 </Grid>
 
-<Grid style={{margin: 'auto'}}>
 
 {
-history.location.pathname.split('/').slice(-1)
+history.location.pathname.split('/').includes('store')?(
+<Store/>
+):(
+<Grid style={{margin: 'auto'}}>
+    {history.location.pathname.split('/').slice(-1)}  
+    </Grid>
+)
 }
 
-</Grid>
+
+
 
 </Grid>
 
@@ -128,10 +138,11 @@ history.location.pathname.split('/').slice(-1)
 const styles=theme=>({
 
 grid:{
-    height:'90vh',
+    height:'91vh',
     width:'100vw',
     background:theme.palette.primary.dashboardBackground,
-    display:'flex'
+    display:'flex',
+    overflowY:'hidden'
 },
 sidebar:{
     height:'91vh',

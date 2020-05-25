@@ -13,7 +13,11 @@ const theme=createMuiTheme({
         primary:{
             main:'#ffc845',
             dashboardBackground:'#f7f7f7',
-            iconBtnBackground:'#fef8e9'
+            iconBtnBackground:'#fef8e9',
+            gray:'#686b73',
+            lightgray:'#babbbf',
+            orange:'#ffb476',
+            lightOrange:'#fff3e9'
                 },
         secondary:{
             main:'#ffc845'
