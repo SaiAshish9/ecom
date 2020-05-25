@@ -36,7 +36,8 @@ useEffect(()=>{
   
 
       <Dialog fullScreen={small && true}
-      disableBackdropClick={true}  maxWidth='sm' open={display}    >
+      disableBackdropClick={true}  maxWidth='sm' 
+      open={!display}    >
    
          
 
@@ -49,7 +50,11 @@ useEffect(()=>{
 <Container className={classes.form}>
 
 
-<Typography variant="h5" style={{fontWeight: 'bold',textAlign: 'center',marginBottom:'10vh'}}>
+<Typography variant="h5" style={{
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom:'10vh',
+    marginRight:'2rem'}}>
     Welcome Back
 </Typography>
 
@@ -61,12 +66,13 @@ onSubmit={e=>{
     setEmail('')
     setPassword('')
     history.push('/dashboard')
+    toggleFormDisplay()
 }}
 >
 
 
 <Typography component="div" style={{textTransform: 'uppercase',color:'#999',marginLeft:'2vw'}}>
-    <Typography component="p">
+    <Typography className={classes.label}  component="p">
     Email
     </Typography>
 <br/>
@@ -92,7 +98,7 @@ onSubmit={e=>{
 
 
 <Typography component="div" style={{textTransform: 'uppercase',color:'#999',marginLeft:'2vw',marginTop:'2vh'}}>
-    <Typography component="p">
+    <Typography className={classes.label} component="p">
     Password
     </Typography>
 <br/>
@@ -120,9 +126,10 @@ onSubmit={e=>{
 <Typography component="p"
 style={{
 textAlign:'end',
-margin:'10px 2.7vw',
+margin:'10px 0',
 fontWeight: 'bold'
 }}
+className={classes.forgot}
 color="primary">
 
 Forgot Password?
@@ -184,10 +191,24 @@ form:{
 input:{
 
 outline:'none',
-color:'#999'
+color:'#999',
+[theme.breakpoints.down('sm')]:{
+width:'70% !important',
+margin:'10px 20px !important'
+}
 
 },
+forgot:{
+    [theme.breakpoints.down('xs')]:{
+        textAlign:'center !important',
 
+    }
+},
+label:{
+
+    
+marginLeft:'20px'
+},
 clear:{
     color:'#515151',
     background:'#eee',
