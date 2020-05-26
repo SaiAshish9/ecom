@@ -17,7 +17,10 @@ const theme=createMuiTheme({
             gray:'#686b73',
             lightgray:'#babbbf',
             orange:'#ffb476',
-            lightOrange:'#fff3e9'
+            lightOrange:'#fff3e9',
+            lightgreen:'#d5ecc7',
+            green:'#78c24a',
+            label:'#9c9ea3'
                 },
         secondary:{
             main:'#ffc845'

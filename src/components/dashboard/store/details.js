@@ -18,7 +18,7 @@ const Details = ({classes,history}) => {
 
     return (
        
-<Grid lg={9} className={classes.form} >
+<Grid lg={9} className={classes.form} style={{position: 'relative',left:'2vw'}} >
 
 <Paper className={classes.form} >
 
@@ -211,9 +211,10 @@ container:{
 },
 grid:{
     height:'77vh',
+    // width:'100vw',
     display:'flex',
     flexDirection:'column',
-    justifyContent:'space-around'
+    justifyContent:'space-between'
 },
 settingsCard:{
     height:'10vh',
@@ -246,7 +247,7 @@ pending:{
 form:{
     height:'75vh',
     width:'55vw',
-    marginLeft:'2vw',
+    // marginLeft:'2vw',
     display:'flex'
 }
 
