@@ -4,16 +4,13 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import Chip from '@material-ui/core/Chip'
-
 import Typography from '@material-ui/core/Typography'
+import Button from '../../../general/button'
 
-import IconButton from '@material-ui/core/IconButton'
-
-import Button from '../../general/button'
-
+import {withRouter} from 'react-router-dom'
 
 
-const Domain = ({classes}) => {
+const Domain = ({classes,history}) => {
 
 
 return (
@@ -34,7 +31,9 @@ return (
 <Grid style={{display:'flex',flexWrap: 'wrap',marginBottom:'5vh'}}>
 
 
-<Paper className={classes.paper}>
+<Paper
+onClick={()=>history.push('/dashboard/store/domain/edit')}
+className={classes.paper}>
 <Grid className={classes.grid1}>
 <Typography style={{fontSize:20}} className={classes.logoTxt}>
    Primary Domain
@@ -86,12 +85,14 @@ Ecom
 </Paper>
 
 
-<Paper className={classes.paper}>
+<Paper 
+onClick={()=>history.push('/dashboard/store/domain/edit')}
+className={classes.paper}>
 <Grid className={classes.grid1}>
 <Typography style={{fontSize:20}} className={classes.logoTxt}>
    Primary Domain
    </Typography>
-<Chip   color="primary"  label="Connected" />
+<Chip   color="primary"  label="Connect" />
 </Grid>
 
 <Grid className={classes.grid2} >
@@ -175,6 +176,7 @@ width:'45%',
 height:'28vh',
 border:'1px solid #eee',
 padding:20,
+cursor:'pointer',
 display:'flex',
 flexDirection:'column',
 justifyContent:'space-between',
@@ -241,4 +243,4 @@ justifyContent:'space-between'
 })
 
 
-export default withStyles(styles)(Domain)
+export default withRouter(withStyles(styles)(Domain))

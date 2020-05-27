@@ -24,38 +24,56 @@ const settings=[
     {
         title: 'Store Details',
         icon:<FaStore />,
-        link:'/dashboard/store'
+        links:[
+            '/dashboard/store'
+        ]
     },
     {
         title: 'Store Theme',
         icon:<LaptopMacIcon/>,
-        link:'/dashboard/store/theme'
+        links:[
+            '/dashboard/store/theme'
+        ]
     },
     {
         title: 'Domain',
         icon:<GiWireframeGlobe/>,
-        link:'/dashboard/store/domain'
+        links:[
+            '/dashboard/store/domain',
+            '/dashboard/store/domain/edit'
+        ]
     },
     {
         title: 'Shipping',
         icon:<BsCreditCard/>,
-        link:'/dashboard/store/shipping'
+        links:[
+            '/dashboard/store/shipping'
+        ]
     },
     {
         title: 'Store Locations',
         icon:<PinDropIcon/>,
-        link:'/dashboard/store/locations'
+        links:[
+            '/dashboard/store/locations',
+            '/dashboard/store/locations/edit'
+        ]
     },
     {
         title: 'Payment',
         icon:<FaStore/>,
-        link:'/dashboard/store/payment'
+        links:[
+            '/dashboard/store/payment',
+            '/dashboard/store/payment/edit'
+
+        ]
     },
     {
         title: 'Add Products',
         icon:<LoyaltyIcon/>,
-        link:'/dashboard/store/products'
-    }
+        links:[
+            '/dashboard/store/products'
+        ]
+        }
 ]
 
     return (
@@ -70,12 +88,12 @@ const settings=[
         <Paper
         onClick={
             ()=>{
-                history.push(i.link)
+                history.push(i.links[0])
             }
         }
-        elevation={history.location.pathname===i.link?1:0} key={k}
+        elevation={i.links.includes(history.location.pathname)?1:0} key={k}
  
-        className={history.location.pathname===i.link?classes.activeCard:classes.settingsCard}>
+        className={i.links.includes(history.location.pathname)?classes.activeCard:classes.settingsCard}>
             
 <IconButton color="primary">
 {i.icon}

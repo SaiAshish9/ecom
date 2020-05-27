@@ -24,67 +24,94 @@ const icons=[
    
     {
         icon:<IoIosSpeedometer/>,
-        path:'/dashboard'
+        paths:[
+            '/dashboard'
+        ]
         },
     {
         icon:<AiFillAppstore/>,
-        path:'/dashboard/orders',
+        paths:[
+            '/dashboard/orders'
+        ],
         name:'orders'
     },
     {
         icon:<LoyaltyIcon/>,
-        path:'/dashboard/product',
+        paths:[
+            '/dashboard/product'
+        ],
         name:'product'
     },
     {
         icon:<FaBoxOpen/>,
-        path:'/dashboard/categories',
+        paths:[
+            '/dashboard/categories'
+        ],
         name:'categories'
     },
     {
         icon:<FaUsers/>,
-        path:'/dashboard/customers',
+        paths:[
+            '/dashboard/customers'
+        ],
         name:'customers'
     },
     {
         icon:<IoIosDocument/>,
-        path:'/dashboard/coupons',
+        paths:[
+            '/dashboard/coupons'
+        ],
         name:'coupons'
     },
     {
         icon:<FaAppStoreIos/>,
-        path:'/dashboard/apps',
+        paths:[
+            '/dashboard/apps'
+        ],
         name:'apps'
     },
     {
         icon:<LaptopMacIcon/>,
-        path:'/dashboard/services',
+        paths:[
+            '/dashboard/services'
+        ],
         name:'services'
     },
     {
         icon:<FaStore/>,
-        path:'/dashboard/store',
-        path1:'/dashboard/store/theme',
-        path2:'/dashboard/store/domain',
-        path3:'/dashboard/store/shipping',
-        path4:'/dashboard/store/locations',
-        path5:'/dashboard/store/payment',
-        path6:'/dashboard/store/products',
+        paths:[
+            '/dashboard/store',
+            '/dashboard/store/theme',
+            '/dashboard/store/domain',
+            '/dashboard/store/shipping',
+            '/dashboard/store/locations',
+            '/dashboard/store/locations/edit',
+            '/dashboard/store/payment',
+            '/dashboard/store/payment/edit',
+            '/dashboard/store/products',
+            '/dashboard/store/domain/edit'
+        ],
         name:'store'
     },
     {
         icon:<FaUserCircle/>,
-        path:'/dashboard/users',
+        paths:[
+            '/dashboard/users'
+        ],
         name:'users'
     },
     {
         icon:<FiSettings/>,
-        path:'/dashboard/settings',
+        paths:[
+            '/dashboard/settings'
+        ],
         name:'settings'
     },
     {
         icon:<RiLogoutBoxRLine/>,
-        path:'/'
+        paths:[
+            '/'
+        ]
     }
 
 ]
@@ -105,7 +132,7 @@ const icons=[
 
 {
     icons.map((i,k)=>{
-  return  [i.path,i.path1,i.path2,i.path3,i.path4,i.path5,i.path6].includes(history.location.pathname)  ?(
+  return  i.paths.includes(history.location.pathname)  ?(
 <IconButton 
 onClick={()=>history.push(i.path)}
 className={[classes.activeIconBtn,classes.iconBtn]}>
@@ -113,7 +140,7 @@ className={[classes.activeIconBtn,classes.iconBtn]}>
 </IconButton>
     ):(
     <IconButton
-    onClick={()=>history.push(i.path)}
+    onClick={()=>history.push(i.paths[0])}
     key={k} className={classes.iconBtn} >
 {i.icon}
     </IconButton>
@@ -152,7 +179,7 @@ history.location.pathname.split('/').includes('store')?(
 const styles=theme=>({
 
 grid:{
-    height:'121vh',
+    // height:'121vh',
     width:'100%',
     background:theme.palette.primary.dashboardBackground,
     display:'flex',
@@ -161,16 +188,16 @@ grid:{
     // bottom:0
 },
 sidebar:{
-    height:'121vh',
+    // height:'131vh',
     width:'4rem'
 },
 sidebarPaper:{
-    height:'121vh',
+    // height:'131vh',
     width:'100%',
     paddingTop:'5vh'
 },
 icons:{
-    height:'78vh',
+    minHeight:'78vh',
     display:'flex',
     flexDirection:'column',
     alignItems:'center',

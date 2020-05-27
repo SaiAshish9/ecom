@@ -3,32 +3,29 @@ import React from 'react'
 import withStyles from '@material-ui/core/styles/withStyles'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
-
 import Typography from '@material-ui/core/Typography'
+import Button from '../../../general/button'
 
+import {withRouter} from 'react-router-dom'
 
-import Button from '../../general/button'
-
-
-
-const Locations = ({classes}) => {
+const Locations = ({classes,history}) => {
 
 
 return (
 <Grid lg={9} className={classes.grid}  >
 
 <Paper className={classes.form} >
-
-
-
 <Grid style={{display:'flex',flexWrap: 'wrap',marginBottom:'5vh'}}>
-
-
-<Paper elevation={0} className={classes.paper}>
+<Paper
+onClick={()=>history.push('/dashboard/store/locations/edit')}
+elevation={0} className={classes.paper} style={{cursor:'pointer'}}>
 <Grid className={classes.grid1}>
-<Typography style={{fontSize:20}} className={classes.logoTxt}>
-   Primary Domain
-   </Typography>
+
+<Typography
+style={{fontSize:20}} className={classes.logoTxt}>
+Burger King   
+</Typography>
+
 </Grid>
 </Paper>
 </Grid>
@@ -73,4 +70,4 @@ color:theme.palette.primary.gray,
 })
 
 
-export default withStyles(styles)(Locations)
+export default withRouter(withStyles(styles)(Locations))

@@ -1,14 +1,9 @@
 import React from 'react'
-
 import withStyles from '@material-ui/core/styles/withStyles'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
-
 import Typography from '@material-ui/core/Typography'
-
-
 import Button from '../../general/button'
-
 import Switch from '@material-ui/core/Switch'
 import Divider from '@material-ui/core/Divider';
 
@@ -17,12 +12,10 @@ const Shipping = ({classes}) => {
 
 
 return (
+
 <Grid lg={9} className={classes.grid}  >
-
 <Paper className={classes.form}  >
-
 <Grid className={classes.left}>
-
 
 <Typography  className={classes.label}>
     AVG PREPARING ORDER
@@ -34,17 +27,14 @@ return (
 
 <Paper elevation={0} className={classes.first}>
 
-
 <label className={classes.label} style={{fontSize:13,maxWidth:'50%'}}>
-
 Enable Order Tracking For Customers
 </label>
+
 <Switch
 checked={true}
 color="primary"
 />
-
-
 
 </Paper>
 
@@ -53,21 +43,17 @@ color="primary"
 <Grid style={{display: 'flex',justifyContent:'space-between',alignItems:'center',width: '100%'}}>
 
 <label className={classes.label} style={{fontSize:13,maxWidth:'50%'}}>
-
 Enable Own Delivery
 </label>
-
 
 <Switch
 checked={true}
 color="primary"
 />
 
-
 </Grid>
 
 <label className={classes.labellt} style={{fontSize:15,maxWidth:'50%'}}>
-
 COST OF DELIVERY
 </label>
 
@@ -77,20 +63,15 @@ placeholder="KD1"
 className={classes.txtInput}
 />
 
-
 <label className={classes.labellt} style={{fontSize:12}}>
-
 Cash on delivery only available for your own delivery
 </label>
 
 <Grid style={{display: 'flex',justifyContent:'space-between',alignItems:'center',width: '100%',margin:'10px 0'}}>
 
-
 <label className={classes.label} style={{fontSize:13}}>
-
 Enable Own Delivery
 </label>
-
 
 <Switch
 checked={!true}
@@ -98,14 +79,11 @@ color="primary"
 />
 
 </Grid>
-
-
 </Paper>
 
 <Button >
     Save Changes
 </Button>
-
 
 </Grid>
 
@@ -142,10 +120,6 @@ color="primary"
 </Paper>
 
 
-
-
-
-
 <Paper elevation={0} className={classes.first} style={{flexDirection:'column',marginTop:'7vh'}}>
 <label className={classes.labellt} style={{fontSize:15}}>
 International Shipping Companies
@@ -173,20 +147,7 @@ color="primary"
 </Paper>
 
 
-
-
-
-
-
-
-
-
 </Grid>
-
-
-
-
-
 </Paper>
    </Grid>
 

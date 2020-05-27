@@ -3,11 +3,17 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import Button from '@material-ui/core/Button'
 
 
-const Btn = ({classes,children}) => {
+const Btn = ({classes,children,onClick,style}) => {
     return (
 <Button 
 type="submit"
-className={classes.btn} variant="contained" color="primary" disableElevation>
+className={classes.btn}
+onClick={onClick}
+style={{...style}}
+variant="contained"
+color="primary" 
+disableElevation
+>
   {children}
 </Button>
     )

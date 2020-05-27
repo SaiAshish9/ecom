@@ -25,7 +25,12 @@ const App=({classes})=> {
 
 <Route exact path="/dashboard/store" component={Dashboard}/>
 <Route  path="/dashboard/store/theme" component={Dashboard}/>
+
+
 <Route  path="/dashboard/store/domain" component={Dashboard}/>
+<Route  path="/dashboard/store/domain/edit"  component={Dashboard}/>
+
+
 <Route  path="/dashboard/store/shipping" component={Dashboard}/>
 <Route  path="/dashboard/store/locations" component={Dashboard}/>
 <Route  path="/dashboard/store/payment" component={Dashboard}/>

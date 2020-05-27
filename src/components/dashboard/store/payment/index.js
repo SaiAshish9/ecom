@@ -5,17 +5,18 @@ import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import {withRouter} from 'react-router-dom'
-import Btn from '../../general/button'
+import Btn from '../../../general/button'
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import Avatar from '@material-ui/core/Avatar'
 import CheckIcon from '@material-ui/icons/Check';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 
-const Payment = ({classes}) => {
+
+const Payment = ({classes,history}) => {
 
 const [checked,setChecked]=useState(false)
-    
+
 const [file,setFile]=useState(null)
 
 const handleChange=e=>{
@@ -185,12 +186,6 @@ className={classes.iconBtn1}>
 }
 
 
-
-
-
-
-
-
 <p className={classes.label} style={{fontSize:12}}>
 I agree with  
 
@@ -206,7 +201,11 @@ of Ecom.
 
 
 
-<Btn>
+<Btn
+onClick={()=>{
+    history.push('/dashboard/store/payment/edit')
+}}
+>
 Save Changes
 </Btn>
 
