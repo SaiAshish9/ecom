@@ -205,9 +205,8 @@ forgot:{
     }
 },
 label:{
-
     
-marginLeft:'20px'
+// marginLeft:'20px'
 },
 clear:{
     color:'#515151',
