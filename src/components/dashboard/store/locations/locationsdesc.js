@@ -1,5 +1,4 @@
-import React from 'react'
-
+import React,{useState} from 'react'
 import withStyles from '@material-ui/core/styles/withStyles'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
@@ -11,8 +10,16 @@ import {withRouter} from 'react-router-dom'
 import Button from '@material-ui/core/Button'
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import CitiesDialog from './citiesDialog'
+import LocationDialog from './locationDialog'
+
 
 const LocationsDesc = ({classes,history}) => {
+
+
+const [citiesDialog,showCitiesDialog]=useState(false)
+
+const [locationDialog,showLocationDialog]=useState(false)
 
 const days=[
     'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday','Saturday','Sunday'
@@ -57,7 +64,9 @@ STORE LOCATION
 <Paper elevation={0} className={classes.disabled1} style={{width:'40%'}} >
 36 Balistreri Lakes
 
-<Button  className={classes.btn}>
+<Button 
+onClick={()=>showLocationDialog(true)}
+className={classes.btn}>
     Edit Location
     </Button>
 
@@ -103,8 +112,11 @@ WORKING HOURS
 </Typography>
 
 
-<IconButton className={classes.plusbtn}  >
-<AddCircleOutlineIcon />
+<IconButton
+onClick={()=>showCitiesDialog(true)}
+className={classes.plusbtn}  >
+<AddCircleOutlineIcon 
+/>
 </IconButton>
 
 </Grid>
@@ -135,12 +147,20 @@ WORKING HOURS
 </Paper>
 
 
-<Btn >
+<Btn 
+>
 Save Changes
 </Btn>
 
+<LocationDialog
+open={locationDialog}
+close={()=>showLocationDialog(false)}
+/>
 
-
+<CitiesDialog
+open={citiesDialog}
+close={()=>showCitiesDialog(false)}
+/>
 
 
 
