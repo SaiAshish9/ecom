@@ -1,33 +1,15 @@
-import React,{useState} from 'react'
+import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import withStyles from '@material-ui/core/styles/withStyles'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
-import IconButton from '@material-ui/core/IconButton'
 import {withRouter} from 'react-router-dom'
 import Btn from '../../../general/button'
-import PhotoCamera from '@material-ui/icons/PhotoCamera';
-import Avatar from '@material-ui/core/Avatar'
-import CheckIcon from '@material-ui/icons/Check';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 
+const Details = ({classes,history}) => {
 
-const Payment = ({classes,history}) => {
-
-const [checked,setChecked]=useState(false)
-
-const [file,setFile]=useState(null)
-
-const handleChange=e=>{
-    var file=e.target.files[0]
-    var reader=new FileReader()
-    // reader.readAsText(file)
-    reader.onload=e=>{
-        setFile(reader.result)        
-    }
-    reader.readAsDataURL(file)
-}
 
 
 return (
@@ -36,39 +18,72 @@ return (
 
 <Paper className={classes.form} >
 
-
 <Grid className={classes.inputsCont}>
-    
+
+<Typography style={{position: 'relative',bottom:'3vh'}}>
+    Account Details
+</Typography>    
 
 <label className={classes.label}>
-ACCOUNT HOLDER NAME
+ NAME
 </label>
 
 <input
 type="text"
-placeholder="100- Wood Beeds"
+placeholder="Azaa"
+className={classes.txtInput}
+/>
+
+
+<label className={classes.label}>
+ PHONE NUMBER
+</label>
+
+<input
+type="tel"
+placeholder="+965 4567 356"
 className={classes.txtInput}
 />
 
 <label className={classes.label}>
-BANK NAME
+ EMAIL
 </label>
 
-{/* <input
-type="text"
-placeholder="Clothes"
+<input
+type="email"
+placeholder="azaa@gmail.com"
 className={classes.txtInput}
-/>  */}
+/>
 
+<label className={classes.label}>
+   STORE NAME
+</label>
 
+<input
+type="text"
+placeholder="Azaa"
+className={classes.txtInput}
+/>
 
+<label className={classes.label}>
+ STORE NAME IN ARABIC
+</label>
+
+<input
+type="text"
+className={classes.txtInput}
+/>
+
+<label className={classes.label}>
+CATEGORY
+</label>
 
         <Select
-        //   value={1}
+          value={1}
         //   onChange={handleChange}
          className={classes.select}
          label="Age"
-        //  placeholder="Clothes"
+         placeholder="Clothes"
         //  borderColor="primary.main"
          variant="outlined"
         // InputProps={{
@@ -86,125 +101,20 @@ className={classes.txtInput}
           <MenuItem style={{fontSize:12}}  value={20}>Twenty</MenuItem>
           <MenuItem style={{fontSize:12}}  value={30}>Thirty</MenuItem>
         </Select>
- 
 
 
-
-
-
-<label className={classes.label}>
-IBAN NUMBER
-</label>
-
-<input
-type="text"
-placeholder="Description about the shop..."
-className={classes.txtInput}
-/>
-
-<label className={classes.label}>
-ACCOUNT NUMBER
-</label>
-
-<input
-type="text"
-placeholder="+91 123456789"
-className={classes.txtInput}
-rows={7}
-/>
-
-
-<Grid  style={{display:'flex',justifyContent:'space-between'}} >
-
-
-<Paper variant="outlined"
-className={classes.uploadPaper}
+<Btn
+onClick={()=>history.push('/dashboard/settings/details/edit')}
+style={{
+    borderRadius:'0px'
+}}
 >
-    <Grid style={{display:'flex',justifyContent:'space-around',alignItems:'center'}}
->
-
-<Grid>
-
-<input accept="image/*"
-onChange={e=>handleChange(e)}
-style={{display:'none'}} id="icon-button-file" type="file" />
-
-<label htmlFor="icon-button-file">
-<IconButton color="primary" aria-label="upload picture" component="span">
-          <PhotoCamera />
-        </IconButton>
-        </label>
-
-
-
-<Typography className={classes.upload}> 
-    Upload
-</Typography>
-
-</Grid>
-
-<Grid style={{height:'12vh',display:'flex',justifyContent:'center',flexDirection:'column'}}>
-    <Typography style={{margin:'10px 0',fontSize:12}}>
-        Civil ID
-    </Typography>
-    <Typography style={{fontSize:12}}>
-        Bussiness ID
-    </Typography>
-
-</Grid>
-
-
-    </Grid>
-
-
-</Paper>
-
-
-
-<Avatar
-src={file ? file :"https://static.toiimg.com/photo/59385796.cms"}
-variant="rounded" className={classes.rounded}>
-</Avatar>
-
-</Grid>
-
-<Grid style={{display:'flex',alignItems:'center'}}>
-
-{
-    checked?(
-<IconButton className={classes.iconBtn}
-onClick={()=>setChecked(false)}
->
-<CheckIcon style={{fontSize:12,fontWeight: 'bold'}} />
-</IconButton>        
-    ):(
-<IconButton
-onClick={()=>setChecked(true)}
-className={classes.iconBtn1}>
-</IconButton>
-    )
-}
-
-
-<p className={classes.label} style={{fontSize:12}}>
-I agree with  
-
-<span className={classes.span} style={{fontSize:15}}>
-Terms & Conditions
-</span>
-
-of Ecom.
-</p>
-
-
-</Grid>
+Change Password
+</Btn>
 
 
 
 <Btn
-onClick={()=>{
-    history.push('/dashboard/store/payment/edit')
-}}
 >
 Save Changes
 </Btn>
@@ -311,7 +221,7 @@ txtInput:{
     },
 inputsCont:{
 display:'flex',
-height:'85vh',
+height:'100vh',
 width:'50%',
 flexDirection:'column',
 justifyContent:'space-around',
@@ -333,14 +243,14 @@ container:{
     padding:'3rem'
 },
 grid:{
-    height:'85vh',
+    height:'110vh',
     display:'flex',
     flexDirection:'column',
     justifyContent:'space-between'
 },
 
 form:{
-    height:'80vh',
+    height:'95vh',
     width:'55vw',
     // marginLeft:'2vw',
     display:'flex'
@@ -349,4 +259,4 @@ form:{
 })
 
 
-export default withRouter(withStyles(styles)(Payment))
+export default withRouter(withStyles(styles)(Details))

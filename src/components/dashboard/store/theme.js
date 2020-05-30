@@ -22,7 +22,7 @@ import CardContent from '@material-ui/core/CardContent';
 
 import {GoCheck} from 'react-icons/go'
 
-import {AiOutlineLaptop,AiOutlineMobile} from 'react-icons/ai'
+import {AiOutlineLaptop} from 'react-icons/ai'
 
 
 const links=[
@@ -48,8 +48,6 @@ return (
           vertical: 'bottom',
           horizontal: 'right',
         }}
-        // variant="dot"
-        // color="primary"
         badgeContent={ <FaPlus className={classes.plus}/> }
       >
         <Avatar style={{height:'3.5rem',width:'3.5rem',background:'#fff'}} >

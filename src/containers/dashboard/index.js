@@ -13,9 +13,10 @@ import LaptopMacIcon from '@material-ui/icons/LaptopMac';
 import {FiSettings} from 'react-icons/fi'
 import {RiLogoutBoxRLine} from 'react-icons/ri'
 
-import {withRouter} from 'react-router-dom'
+import {withRouter,Switch,Route} from 'react-router-dom'
 
 import Store from '../../components/dashboard/store'
+import Settings from '../../components/dashboard/settings'
 
 const Dashboard = ({classes,history}) => {
 
@@ -103,7 +104,19 @@ const icons=[
     {
         icon:<FiSettings/>,
         paths:[
-            '/dashboard/settings'
+            '/dashboard/settings',
+            '/dashboard/settings/details/edit',
+            '/dashboard/settings/Subscription',
+            '/dashboard/settings/preferences',
+            '/dashboard/settings/balance',
+            '/dashboard/settings/contact',
+            '/dashboard/settings/language',
+            '/dashboard/settings/privacy',
+            '/dashboard/settings/terms'
+
+
+
+
         ],
         name:'settings'
     },
@@ -156,17 +169,60 @@ className={[classes.activeIconBtn,classes.iconBtn]}>
 
 </Grid>
 
+<Switch>
 
-{
-history.location.pathname.split('/').includes('store')?(
-<Store/>
-):(
+<Route exact path="/dashboard" >
 <Grid style={{margin: 'auto'}}>
     {history.location.pathname.split('/').slice(-1)}  
-    </Grid>
-)
-}
+</Grid>
+</Route>
+<Route path="/dashboard/orders" >
+<Grid style={{margin: 'auto'}}>
+    {history.location.pathname.split('/').slice(-1)}  
+</Grid>
+</Route>
+<Route path="/dashboard/product" >
+<Grid style={{margin: 'auto'}}>
+    {history.location.pathname.split('/').slice(-1)}  
+</Grid>
+</Route>
+<Route path="/dashboard/categories" >
+<Grid style={{margin: 'auto'}}>
+    {history.location.pathname.split('/').slice(-1)}  
+</Grid>
+</Route>
+<Route path="/dashboard/customers" >
+<Grid style={{margin: 'auto'}}>
+    {history.location.pathname.split('/').slice(-1)}  
+</Grid>
+</Route>
+<Route path="/dashboard/coupons" >
+<Grid style={{margin: 'auto'}}>
+    {history.location.pathname.split('/').slice(-1)}  
+</Grid>
+</Route>
+<Route path="/dashboard/apps" >
+<Grid style={{margin: 'auto'}}>
+    {history.location.pathname.split('/').slice(-1)}  
+</Grid>
+</Route>
+<Route path="/dashboard/services" >
+<Grid style={{margin: 'auto'}}>
+    {history.location.pathname.split('/').slice(-1)}  
+</Grid>
+</Route>
+<Route path="/dashboard/store" component={Store} />
+<Route path="/dashboard/users" >
+<Grid style={{margin: 'auto'}}>
+    {history.location.pathname.split('/').slice(-1)}  
+</Grid>
+</Route>
+<Route path="/dashboard/settings" component={Settings} />
 
+
+
+
+</Switch>
 
 
 
@@ -188,7 +244,7 @@ grid:{
     // bottom:0
 },
 sidebar:{
-    // height:'131vh',
+    minHeight:'90vh',
     width:'4rem'
 },
 sidebarPaper:{
