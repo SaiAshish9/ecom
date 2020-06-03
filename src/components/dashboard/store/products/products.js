@@ -2,8 +2,8 @@ import React from 'react'
 
 const Products = () => {
     return (
-        <div style={{margin:'auto'}}>
-            products
+        <div>
+       products     
         </div>
     )
 }

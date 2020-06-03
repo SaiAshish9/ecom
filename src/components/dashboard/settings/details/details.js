@@ -84,13 +84,7 @@ CATEGORY
          className={classes.select}
          label="Age"
          placeholder="Clothes"
-        //  borderColor="primary.main"
          variant="outlined"
-        // InputProps={{
-        //     classes: {
-        //       notchedOutline: classes.select
-        //     }
-        //   }}
         margin="normal"
 
         >

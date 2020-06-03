@@ -12,6 +12,7 @@ const theme=createMuiTheme({
         },
         primary:{
             main:'#ffc845',
+            red:'#ca3a3a',
             dashboardBackground:'#f7f7f7',
             iconBtnBackground:'#fef8e9',
             gray:'#686b73',
@@ -20,6 +21,7 @@ const theme=createMuiTheme({
             lightOrange:'#fff3e9',
             lightgreen:'#d5ecc7',
             green:'#78c24a',
+            labelGreen:'#58b41f',
             label:'#9c9ea3'
                 },
         secondary:{

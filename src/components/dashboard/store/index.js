@@ -14,7 +14,7 @@ import Locations from './locations/locations'
 import LocationsDesc from './locations/locationsdesc'
 import Payment from './payment/index'
 import PaymentDesc from './payment/paymentdesc'
-import Products from './products'
+import Products from './products/products'
 import Theme from './theme'
 import Shipping from './shipping'
 

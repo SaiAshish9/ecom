@@ -17,6 +17,8 @@ import {withRouter,Switch,Route} from 'react-router-dom'
 
 import Store from '../../components/dashboard/store'
 import Settings from '../../components/dashboard/settings'
+import Products from '../../components/dashboard/products'
+import Categories from '../../components/dashboard/categories'
 
 const Dashboard = ({classes,history}) => {
 
@@ -39,14 +41,19 @@ const icons=[
     {
         icon:<LoyaltyIcon/>,
         paths:[
-            '/dashboard/product'
+            '/dashboard/product',
+            '/dashboard/product/products/edit',
+            '/dashboard/product/categories',
+            '/dashboard/product/options'
+
         ],
         name:'product'
     },
     {
         icon:<FaBoxOpen/>,
         paths:[
-            '/dashboard/categories'
+            '/dashboard/categories',
+            '/dashboard/categories/edit'
         ],
         name:'categories'
     },
@@ -181,16 +188,11 @@ className={[classes.activeIconBtn,classes.iconBtn]}>
     {history.location.pathname.split('/').slice(-1)}  
 </Grid>
 </Route>
-<Route path="/dashboard/product" >
-<Grid style={{margin: 'auto'}}>
-    {history.location.pathname.split('/').slice(-1)}  
-</Grid>
-</Route>
-<Route path="/dashboard/categories" >
-<Grid style={{margin: 'auto'}}>
-    {history.location.pathname.split('/').slice(-1)}  
-</Grid>
-</Route>
+
+<Route path="/dashboard/product" component={Products} />
+
+<Route path="/dashboard/categories" component={Categories}  />
+
 <Route path="/dashboard/customers" >
 <Grid style={{margin: 'auto'}}>
     {history.location.pathname.split('/').slice(-1)}  
