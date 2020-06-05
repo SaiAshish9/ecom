@@ -46,9 +46,10 @@ const useStyles = makeStyles({
       bottom:0,
       width:'100%',
       height:'10vh',
-      paddingLeft:24,
+      paddingLeft:26,
       display:'flex',
-      alignItems:'center'
+      alignItems:'center',
+      justifyContent:'space-around'
   },
 });
 
@@ -57,6 +58,7 @@ export default function SimpleBottomNavigation() {
   const [value, setValue] = React.useState(0);
 
   return (
+
     <BottomNavigation
       value={value}
       onChange={(event, newValue) => {

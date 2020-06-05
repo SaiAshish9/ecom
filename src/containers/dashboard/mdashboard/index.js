@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import withStyles from '@material-ui/core/styles/withStyles'
+import {withStyles,makeStyles} from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import {withRouter} from 'react-router-dom'
@@ -11,6 +11,27 @@ import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 import BottomNavigation from '../../../components/mdashboard/footer'
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Button from '../../../components/general/button'
+import Tooltip from '@material-ui/core/Tooltip';
+import Fade from '@material-ui/core/Fade';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select'
+
+const BootstrapTooltip=withStyles((theme)=>({
+    arrow: {
+        color:'#fff',
+        fontSize:10,
+      },
+      tooltip: {
+        marginRight:30,
+        backgroundColor: '#fff',
+        border:`1px solid ${theme.palette.primary.lightgray}`
+      },
+}))(Tooltip)
+
+
+
+
+
 
 const BorderLinearProgress = withStyles((theme) => ({
     root: {
@@ -28,6 +49,11 @@ const BorderLinearProgress = withStyles((theme) => ({
 
 
 const MDashboard = ({classes,history}) => {
+
+const [loc,setLoc] = useState(0)
+
+const [day,setDay] = useState(0)
+
     return (
         <Grid className={classes.grid}>
 
@@ -50,9 +76,54 @@ className={classes.navbar}
     display:'flex',
     alignItems:'center'
 }} >
+
+
+<BootstrapTooltip 
+TransitionComponent={Fade} 
+TransitionProps={{ timeout: 600 }} 
+title={
+    <React.Fragment>
+            <Typography 
+            style={{
+            textAlign:'end',
+            fontSize:14
+            }}
+             color="primary" >
+                 Watch video on   
+            </Typography>
+
+            <Typography
+            className={classes.dark}
+            style={{textAlign:'end'}}
+            >
+                 How to build your store?
+            </Typography>
+
+    {/* <ChangeHistoryIcon
+    style={{
+        position:'relative',
+        right:'1rem',
+        bottom:'4rem',
+        fontSize:20
+    }}
+    className={classes.light}
+    /> */}
+
+    </React.Fragment>
+} 
+leaveDelay={2000}
+enterTouchDelay={10}
+arrow
+>
 <IconButton color="primary" >
 <PlayCircleOutlineIcon/>
 </IconButton>
+</BootstrapTooltip>
+
+
+
+
+
 <Switch
 color="primary"
 checked={true}
@@ -108,19 +179,71 @@ style={{
     justifyContent:'space-between',alignItems:'center'
 }}>
 
+
 <Typography className={classes.dark} >
 Dashboard
 </Typography>
 
+<Select
+value={loc}
+className={classes.select}
+onChange={e=>{
+    setLoc(e.target.value)
+}}
+inputProps={{
+classes:{
+    icon:classes.icon
+}
+}}
+>
+<MenuItem value={0} >
 <Typography className={classes.dark} >
 Location 1
 </Typography>
+</MenuItem>
+<MenuItem value={2} >
+<Typography className={classes.dark} >
+Location 2
+</Typography>
+</MenuItem>
+<MenuItem value={3} >
+<Typography className={classes.dark} >
+Location 3
+</Typography>
+</MenuItem>
+</Select>
 
 
+
+
+<Select
+onChange={e=>{
+    setDay(e.target.value)
+}}
+value={day}
+className={classes.select}
+inputProps={{
+classes:{
+    icon:classes.icon
+}
+}}
+>
+<MenuItem value={0} >
 <Typography className={classes.dark} >
 Yesterday
 </Typography>
-
+</MenuItem>
+<MenuItem value={2} >
+<Typography className={classes.dark} >
+Today
+</Typography>
+</MenuItem>
+<MenuItem value={3} >
+<Typography className={classes.dark} >
+Sunday
+</Typography>
+</MenuItem>
+</Select>
 
 </Grid>
 
@@ -207,6 +330,22 @@ style={{
 
 const styles =theme=>({
 
+icon:{
+fill:theme.palette.primary.main,
+marginBottom:5
+},
+
+select:{
+backgroundColor:theme.palette.primary.dashboardBackground,
+border:'none',
+'&:before':{
+    border:'none'
+},
+'&:after':{
+    border:'none'
+}
+
+},
 
 progress:{
 height:'0.6rem',
