@@ -84,6 +84,7 @@ Code sent to
     [...Array(4).keys()].map((i,k)=>(
 <TextField
 inputProps={{
+    maxLength:1,
     style:{
         textAlign:'center'
     }
