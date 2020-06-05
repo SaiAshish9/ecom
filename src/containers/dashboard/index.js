@@ -20,7 +20,15 @@ import Settings from '../../components/dashboard/settings'
 import Products from '../../components/dashboard/products'
 import Categories from '../../components/dashboard/categories'
 
+import useMediaQuery from '@material-ui/core/useMediaQuery'
+
+import MDashboard from './mdashboard'
+
+
 const Dashboard = ({classes,history}) => {
+
+
+    const mobileSize=useMediaQuery('( max-width:650px )')
 
 
 const icons=[
@@ -137,6 +145,15 @@ const icons=[
 ]
 
     return (
+
+<React.Fragment>
+
+
+{
+    mobileSize?<MDashboard/>:(
+
+
+
         <Grid>
             <Navbar/>
 
@@ -231,7 +248,11 @@ className={[classes.activeIconBtn,classes.iconBtn]}>
 </Grid>
 
         </Grid>
-    )
+
+)
+}
+</React.Fragment>
+)
 }
 
 const styles=theme=>({
