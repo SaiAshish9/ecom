@@ -1,19 +1,24 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Grid from '@material-ui/core/Grid'
 import withStyles from '@material-ui/core/styles/withStyles'
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
+import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
+import VisibilityIcon from '@material-ui/icons/Visibility';
+import IconButton from '@material-ui/core/IconButton'
 
-
-const Input = ({select,rows,classes,placeholder,type,label,style}) => {
+const Input = ({iconStyle,select,rows,classes,placeholder,type,label,style}) => {
     
+
+const [display,setDisplay] =useState(false)
+
     return (
         <Grid style={{display: 'flex',flexDirection: 'column'}}>
 <label style={{marginBottom:10}} className={classes.label}>
 {label}
 </label>
 {
-    rows?(
+   type!=="password"&& rows?(
 <textArea
 rows={rows}
 style={{...style}}
@@ -23,7 +28,7 @@ style={{height:'7rem'}}
 className={classes.txtInput}
 />
 
-    ):!select && (
+    ): type!=="password"&& !select && (
 <input
 type={type}
 style={{...style}}
@@ -34,7 +39,7 @@ className={classes.txtInput}
 }
 
 {
-    select && (
+   select && (
         <Select
         value={1}
       //   onChange={handleChange}
@@ -54,6 +59,38 @@ className={classes.txtInput}
       </Select>
     )
 }
+
+{
+    type === "password" && (
+        <Grid style={{height:'7vh'}} >
+<input
+type={type}
+style={{width:'80%'}}
+style={{...style}}
+placeholder={placeholder}
+className={classes.txtInput}
+/>
+
+ <IconButton 
+ onClick={()=>setDisplay(!display)}
+ style={{
+...iconStyle
+}} 
+>
+{
+  display?(
+    <VisibilityIcon/>
+  ):(
+<VisibilityOffIcon/>
+  )
+}
+</IconButton> 
+
+ </Grid>
+    )
+}
+
+
 
 
         </Grid>

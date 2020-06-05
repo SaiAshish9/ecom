@@ -1,6 +1,9 @@
 import React from 'react';
 import './App.css';
 import Auth from './containers/auth/auth'
+import SignUp from './containers/auth/signUp'
+import Login from './containers/auth/loginMobile'
+import Verification from './containers/auth/verification'
 import withStyles from '@material-ui/core/styles/withStyles'
 import {Switch,Route} from 'react-router-dom'
 import Dashboard from './containers/dashboard'
@@ -13,6 +16,9 @@ const App=({classes})=> {
 <Switch>
 
 <Route exact path="/" component={Auth}/>
+<Route exact path="/signUp" component={SignUp}/>
+<Route exact path="/login" component={Login}/>
+<Route exact path="/verification" component={Verification}/>
 <Route exact path="/dashboard" component={Dashboard}/>
 <Route  path="/dashboard/orders" component={Dashboard}/>
 <Route  path="/dashboard/product" component={Dashboard}/>
