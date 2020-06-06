@@ -15,11 +15,16 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Fade from '@material-ui/core/Fade';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select'
+import LocalShippingIcon from '@material-ui/icons/LocalShipping';
+import {GiReceiveMoney} from 'react-icons/gi'
+import Box from '@material-ui/core/Box';
+import LaptopMacIcon from '@material-ui/icons/LaptopMac';
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
 
 const BootstrapTooltip=withStyles((theme)=>({
     arrow: {
-        color:'#fff',
-        fontSize:10,
+        color:theme.palette.primary.gray,
+        fontSize:8,
       },
       tooltip: {
         marginRight:30,
@@ -260,9 +265,30 @@ style={{
 <Paper
 style={{
     width:'47%',
-    height:'20vh'
+    height:'20vh',
+    padding:20
 }}
 >
+
+<Box display="flex"> 
+<GiReceiveMoney style={{fontSize:18}} className={ classes.primary} />
+<Typography style={{fontSize:14}} className={classes.light} >
+Sales
+</Typography>
+</Box>
+<Box style={{marginTop:'2vh'}} display="flex" alignItems="flex-end" justifyContent="flex-end" >
+ <Typography className={classes.dark} >
+     KD
+ </Typography>
+    <Typography style={{fontSize:20}} className={classes.dark} >
+        15,000
+    </Typography>
+</Box>
+<Box display="flex" justifyContent="flex-end" >
+<Typography className={classes.light} >
+Target KD 6000
+</Typography>
+</Box>
 </Paper>
 
 
@@ -270,11 +296,32 @@ style={{
 <Paper
 style={{
     width:'47%',
-    height:'20vh'
+    height:'20vh',
+    padding:20
 }}
 >
-</Paper>
 
+
+<Box display="flex"> 
+<LocalShippingIcon className={ classes.primary} />
+<Typography style={{fontSize:14}} className={classes.light} >
+Orders
+</Typography>
+</Box>
+<Box style={{marginTop:'2vh'}} display="flex" alignItems="flex-end" justifyContent="flex-end" >
+ <Typography className={classes.dark} >
+     TOTAL
+ </Typography>
+    <Typography style={{fontSize:20}} className={classes.dark} >
+        300
+    </Typography>
+</Box>
+<Box display="flex" justifyContent="flex-end" >
+<Typography className={classes.light} >
+Target KD 456
+</Typography>
+</Box>
+</Paper>
 </Grid>
 
 
@@ -288,6 +335,32 @@ style={{
 }}
 >
 
+<Box display="flex"> 
+<LaptopMacIcon className={ classes.primary} />
+<Typography style={{fontSize:14}} className={classes.light} >
+Website Traffic
+</Typography>
+</Box>
+<Box display="flex" alignItems="center" justifyContent="space-around" >
+<Box  style={{marginTop:'2vh'}} display="flex"  flexDirection="column" alignItems="center" >
+<Typography  style={{fontSize:20}} className={classes.dark}>
+    153
+</Typography>
+<Typography  className={classes.light}>
+    Visitors
+</Typography>
+</Box>
+<Box  style={{marginTop:'2vh'}} display="flex"  flexDirection="column" alignItems="center" >
+<Typography  style={{fontSize:20}} className={classes.dark}>
+    66
+</Typography>
+<Typography  className={classes.light}>
+    Conversions
+</Typography>
+</Box>
+</Box>
+
+
 </Paper>
 
 
@@ -302,6 +375,49 @@ style={{
 }}
 >
         
+
+<Box display="flex" justifyContent="space-between"> 
+
+<Box display="flex" >
+<LaptopMacIcon className={ classes.primary} />
+<Typography style={{fontSize:14}} className={classes.light} >
+Deliveries
+</Typography>    
+</Box>
+<Box display="flex">
+<Typography style={{marginRight:5}} className={classes.light} >
+KWD
+</Typography>
+<Typography className={classes.dark} >
+3493
+</Typography>
+</Box>
+</Box>
+
+<Box display="flex" alignItems="center" justifyContent="space-between" >
+<Box flexWrap="wrap"  style={{marginTop:'2vh'}} display="flex"  flexDirection="column" alignItems="center" >
+<Typography  style={{fontSize:20}} className={classes.dark}>
+    12
+</Typography>
+<Typography  className={classes.light}>
+    Local Deliveries
+</Typography>
+</Box>
+<Box  style={{marginTop:'2vh'}} display="flex"  flexDirection="column" alignItems="center" >
+<Typography  style={{fontSize:20}} className={classes.dark}>
+    23
+</Typography>
+<Typography flexWrap="wrap"  className={classes.light}>
+    International Shippings
+</Typography>
+</Box>
+</Box>
+
+
+
+
+
+
 </Paper>
 
 
@@ -313,7 +429,40 @@ style={{
     margin:'15px 0'
 }}
 >
-        
+
+
+
+
+<Box display="flex"> 
+<PersonAddIcon className={ classes.primary} />
+<Typography style={{fontSize:14}} className={classes.light} >
+New Customers
+</Typography>
+</Box>
+<Box display="flex" alignItems="center" justifyContent="space-around" >
+<Box  style={{marginTop:'2vh'}} display="flex"  flexDirection="column" alignItems="center" >
+<Typography  style={{fontSize:20}} className={classes.dark}>
+    2,356
+</Typography>
+<Typography  className={classes.light}>
+    Total Customers
+</Typography>
+</Box>
+<Box  style={{marginTop:'2vh'}} display="flex"  flexDirection="column" alignItems="center" >
+<Typography  style={{fontSize:20}} className={classes.dark}>
+    15,000
+</Typography>
+<Typography  className={classes.light}>
+    Newly Added
+</Typography>
+</Box>
+</Box>
+
+
+
+
+
+
 </Paper>
 
 
@@ -329,6 +478,11 @@ style={{
 
 
 const styles =theme=>({
+
+primary:{
+color:theme.palette.primary.main,
+margin:'0px 10px'
+},
 
 icon:{
 fill:theme.palette.primary.main,
