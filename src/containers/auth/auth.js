@@ -4,13 +4,17 @@ import Typography from '@material-ui/core/Typography'
 import withStyles from "@material-ui/core/styles/withStyles";
 import Navbar from '../../components/general/navbar'
 import Grid from '@material-ui/core/Grid';
-import FormDialog from '../../components/homepage/dialog'
+import LoginDialog from '../../components/auth/loginDialog'
+import SignUpDialog from '../../components/auth/signUpDialog'
+import CreateStoreDialog from '../../components/auth/createStoreDialog'
 import {FormDialogContext} from '../../contexts/FormDialog'
 import useMediaQuery  from '@material-ui/core/useMediaQuery'
  
+
+import {withRouter} from 'react-router-dom'
 import AuthMobile from './authMobile'
 
-const Homepage = ({classes}) => {
+const Homepage = ({classes,login,signUp,createStore,history}) => {
 
     const [display,setDisplay]=useState(false)
     const mobileSize = useMediaQuery('( max-width:650px )')
@@ -50,7 +54,28 @@ const Homepage = ({classes}) => {
     }}
     />
     </Grid>
-    <FormDialog  />
+
+
+{
+  login&&(
+    <LoginDialog  />
+  )
+}
+
+{
+  signUp&&(
+    <SignUpDialog  />
+  )
+}
+
+
+{
+  history.location.pathname==='/createStore'&&(
+    <CreateStoreDialog />
+  )
+}
+
+
     </Grid>
     </Typography>
     </FormDialogContext.Provider>
@@ -87,4 +112,4 @@ const styles =theme=>({
   
 
 
-export default withStyles(styles)(Homepage)
+export default withRouter(withStyles(styles)(Homepage))

@@ -10,6 +10,7 @@ import TextField from '../../components/general/input'
 import Grid from '@material-ui/core/Grid'
 import Button from '../../components/general/button'
 import Checkbox from '@material-ui/core/Checkbox'
+import Dialog  from './auth'
 
 
 const SignUp = ({classes,history}) => {
@@ -52,9 +53,9 @@ const mobileSize=useMediaQuery('( max-width:650px )')
 
 
     ):(
-        <Grid>
-
-        </Grid>
+<Dialog
+signUp={true}
+/>
     )
 }
 

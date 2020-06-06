@@ -1,8 +1,6 @@
 import React,{useState,Suspense,lazy} from 'react';
 import './App.css';
-import Auth from './containers/auth/auth'
-import SignUp from './containers/auth/signUp'
-import Login from './containers/auth/loginMobile'
+
 import Verification from './containers/auth/verification'
 import withStyles from '@material-ui/core/styles/withStyles'
 import {Switch,Route} from 'react-router-dom'
@@ -14,6 +12,10 @@ import Grid from '@material-ui/core/Grid'
 
 const Dashboard=lazy(()=>import('./containers/dashboard'))
 const MDashboard=lazy(()=>import('./containers/dashboard/mdashboard'))
+const Home=lazy(()=>import('./containers/homepage'))
+const Auth=lazy(()=>import('./containers/auth/auth'))
+const SignUp=lazy(()=>import('./containers/auth/signUp'))
+const Login=lazy(()=>import('./containers/auth/loginMobile'))
 
 
 const Loader=({classes})=>(
@@ -35,6 +37,8 @@ const App=({classes})=> {
 
 <Switch>
 <Route exact path="/" component={Auth}/>
+<Route exact path="/home" component={Home}/>
+<Route exact path="/createStore" component={Auth}/>
 <Route exact path="/signUp" component={SignUp}/>
 <Route exact path="/login" component={Login}/>
 <Route exact path="/verification" component={Verification}/>

@@ -5,10 +5,11 @@ import Button from '@material-ui/core/Button'
 
 import {FormDialogContext} from '../../../contexts/FormDialog'
 
+import {withRouter} from 'react-router-dom'
 
 
 
-const Navbar = ({classes}) => {
+const Navbar = ({classes,history}) => {
 
 const {display,toggleFormDisplay}=useContext(FormDialogContext)
 
@@ -32,7 +33,11 @@ const links=[
 
 <Typography className={classes.nav} component="div" >
             
-<Typography variant="h3" style={{fontWeight: 'bold'}} >
+<Typography 
+onClick={()=>{
+    history.push('/')
+}}
+variant="h3" style={{fontWeight: 'bold',cursor:'pointer'}} >
     ecom
 
 </Typography>
@@ -65,14 +70,26 @@ className={classes.h6} variant="h6"  >
 
 <Button className={classes.button} style={{marginRight:7}} 
 disableElevation 
-onClick={ toggleFormDisplay}
+// onClick={ toggleFormDisplay}
+onClick={()=>{
+    history.push('/login')
+}}
 >
     Login
 </Button>
 
 
 
-<Button className={classes.button} disabled >
+<Button
+onClick={()=>{
+    history.push('/signUp')
+}}
+style={{
+    color:'#caa33a'
+}}
+className={classes.button}
+//  disabled
+  >
     Sign Up
 </Button>
 
@@ -128,4 +145,4 @@ const styles=theme=>({
 }) 
 
 
-export default withStyles(styles)(Navbar)
+export default withRouter(withStyles(styles)(Navbar))

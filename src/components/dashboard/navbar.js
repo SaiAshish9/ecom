@@ -11,9 +11,9 @@ import Badge from '@material-ui/core/Badge';
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 import FingerprintIcon from '@material-ui/icons/Fingerprint';
 
+import {withRouter} from 'react-router-dom'
 
-
-const Navbar = ({classes}) => {
+const Navbar = ({classes,history}) => {
     return (
         <React.Fragment>
        <Paper variant="outlined"
@@ -23,10 +23,19 @@ const Navbar = ({classes}) => {
 
 <Grid className={classes.grid} >
 
-<Grid style={{marginLeft:'2rem'}}>
-<Typography style={{color:'#989b9f'}} variant="h6" >
+<Grid
+
+onClick={()=>{
+    history.push('/home')
+}}
+style={{marginLeft:'2rem',cursor:'pointer'}}>
+<Typography
+
+style={{color:'#989b9f'}} variant="h6" >
   
-  <LocalMallIcon color="primary" style={{position:'relative',top:'3px',marginRight:'5px'}} />
+  <LocalMallIcon 
+
+  color="primary" style={{cursor:'pointer',position:'relative',top:'3px',marginRight:'5px'}} />
 
   ecom
     </Typography>    
@@ -104,4 +113,4 @@ const styles=theme=>({
 })
 
 
-export default withStyles(styles)(Navbar)
+export default withRouter(withStyles(styles)(Navbar))
