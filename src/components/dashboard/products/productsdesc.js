@@ -14,6 +14,11 @@ import CloseIcon from '@material-ui/icons/Close';
 import TextField from '../../general/input'
 import Divider from '@material-ui/core/Divider'
 
+import Options from './options'
+import OptionsDesc from './optionsdesc'
+
+
+
 const ProductsDesc = ({classes,history}) => {
 
     const [file,setFile]=useState(null)
@@ -188,49 +193,77 @@ placeholder="1kg"
 
 
 <Paper className={classes.form1} > 
-
 <Grid style={{ display:'flex',alignItems:'center',justifyContent:'space-between',width:'50%' }} >
-
-
 <Typography variant="h5" component="h5">
     Options
 </Typography>
-
 <Divider orientation="vertical"  flexItem />
-
-
 <Typography className={classes.label} >
 You can add options like color,size,extra,special requests etc to the product
 </Typography>
-
-
 </Grid>
-
 <Grid>
-
-
 <Button
+disabled={
+    history.location.pathname!=='/dashboard/product/products/edit'
+}
 style={{
     borderRadius:5,
     fontSize:12
 }}
 >
-    SAVE OPTIONS 
+    SAVED OPTIONS 
 </Button>
-
 <Button
+disabled={
+    history.location.pathname!=='/dashboard/product/products/edit'
+}
+onClick={()=>{
+    history.push('/dashboard/product/products/edit/options')
+}}
+
+
 style={{
     borderRadius:5,
     fontSize:12
 }}
 >
-    CREATE NEW OPTION 
-</Button>
 
+{
+history.location.pathname==='/dashboard/product/products/edit'?(
+    'CREATE NEW OPTION' 
+):(
+    'ADD AN OTHER OPTION' 
+)
+
+}
+</Button>
 </Grid>
-
-
 </Paper>
+
+
+
+{
+    history.location.pathname ==='/dashboard/product/products/edit/options' &&
+    (
+        <Typography>
+            <Options/>
+        </Typography>
+    )
+}
+
+
+{
+    history.location.pathname ==='/dashboard/product/products/edit/options/edit' &&
+    (
+        <Typography>
+            <OptionsDesc/>
+        </Typography>
+    )
+}
+
+
+
 
         </Grid>
     )

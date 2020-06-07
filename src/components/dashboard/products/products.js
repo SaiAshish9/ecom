@@ -91,16 +91,16 @@ className={classes.highlight}
 </Typography>
 <Typography
 onClick={()=>{
-    history.push('/dashboard/product/options')
+    history.push('/dashboard/categories/options')
 }}
 style={{cursor:'pointer'}}
 className={
-    history.location.pathname !=='/dashboard/product/options' ? classes.lightgray : classes.black
+    history.location.pathname !=='/dashboard/categories/options' ? classes.lightgray : classes.black
 }
 >
 Options
 {
-history.location.pathname ==='/dashboard/product/options' && (
+history.location.pathname ==='/dashboard/categories/options' && (
 <Paper
 elevation={0}
 className={classes.highlight}

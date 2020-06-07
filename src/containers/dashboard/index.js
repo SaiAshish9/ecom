@@ -19,6 +19,7 @@ import Store from '../../components/dashboard/store'
 import Settings from '../../components/dashboard/settings'
 import Products from '../../components/dashboard/products'
 import Categories from '../../components/dashboard/categories'
+import Options from '../../components/dashboard/categories/categoryoptions'
 
 
 
@@ -58,7 +59,8 @@ const icons=[
         icon:<FaBoxOpen/>,
         paths:[
             '/dashboard/categories',
-            '/dashboard/categories/edit'
+            '/dashboard/categories/edit',
+            '/dashboard/categories/options'
         ],
         name:'categories'
     },
@@ -204,7 +206,11 @@ className={[classes.activeIconBtn,classes.iconBtn]}>
 
 <Route path="/dashboard/product" component={Products} />
 
-<Route path="/dashboard/categories" component={Categories}  />
+<Route exact  path="/dashboard/categories" component={Categories}  />
+
+
+<Route  path="/dashboard/categories/options" component={Options}  />
+
 
 <Route path="/dashboard/customers" >
 <Grid style={{margin: 'auto'}}>

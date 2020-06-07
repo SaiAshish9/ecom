@@ -133,48 +133,15 @@ Add New
 </Grid>
 </Paper>
 
-<Grid style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginTop:'40px'}}>
 
-
-<Grid style={{display:'flex',alignItems:'center'}}>
-
-<Typography className={classes.gray} >
-Landing Page ( 1st Page in website ) 
-</Typography>
-
-
-<IconButton 
-
-className={classes.info}>
-<InfoOutlinedIcon/>
-</IconButton>
-
-</Grid>
-
-
-
-<Button 
-onClick={()=>{
-    history.push('/dashboard/categories/edit')
-}}
-style={{
-    borderRadius:'0px'
-}}
->
-    Add New
-</Button>
-</Grid>
 
 
 
 <TableContainer style={{marginTop:'5vh'}} component={Paper} >
     <Table>
         <TableHead>
-            <StyledTableCell align="right">SECTIONS</StyledTableCell>
-            <StyledTableCell align="right">PRODUCTS</StyledTableCell>
-            <StyledTableCell align="right">TOTAL PRODUCTS</StyledTableCell>
-            <StyledTableCell align="right">AVAILABILITY</StyledTableCell>
-            <StyledTableCell align="center">STATUS</StyledTableCell>
+            <StyledTableCell align="right">OPTION NAME</StyledTableCell>
+            <StyledTableCell style={{width:'80%'}} align="center">SUB-OPTIONS</StyledTableCell>
         </TableHead>
         <TableBody>
 
@@ -182,51 +149,25 @@ style={{
     [...Array(5).keys()].map((i,k)=>(
         <StyledTableRow key={k} >
         <StyledTableCell align="right">Wood Beads</StyledTableCell>
-        <StyledTableCell align="right">
-            <Avatar style={{marginLeft:'90%'}} variant="rounded" src="https://cdn2.iconfinder.com/data/icons/flatfaces-everyday-people-square/128/beard_male_man_face_avatar-512.png" />
-        </StyledTableCell>
-        <StyledTableCell align="right">74</StyledTableCell>
-        <StyledTableCell align="right">
-        {
-    k%2===0?(
-<Typography  className={classes.green}>
-In Stock
-</Typography>
-    ):(
-<Typography  className={classes.red}>
-Out of Stock
-</Typography>
-    )
-}
-            </StyledTableCell>
-        <StyledTableCell align="right">           
+        <StyledTableCell 
+        style={{display:'flex',
+        alignItems:'center',
+        paddingLeft:'20%',
+        justifyContent:'space-between',
+        width:'90%'}} >
+           L,M,S,XXL,XL,XXXL
+   
             <Grid style={{display:'flex',alignItems:'center',justifyContent:'space-around'}}>
-
-{
-    k%2===0?(
-<Typography  className={classes.green}>
-Active
-</Typography>
-    ):(
-<Typography style={{textAlign:'start',width:'2rem'}} className={classes.orange}>
-Inactive
-</Typography>
-    )
-}
 <Grid style={{textAlign:'end',width:'2rem'}}>
 
 <IconButton
-style={{ position:'relative',right:k%2===0&&4 }}
 >
 <DeleteOutlineIcon
 className={classes.label}
 />
 </IconButton>
 </Grid>
-{/* <Switch
-color="primary"
-checked={k%2===0}
-/> */}
+
             </Grid>
         </StyledTableCell>
       </StyledTableRow>
@@ -239,117 +180,10 @@ checked={k%2===0}
 
 
 
-<Grid style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginTop:'40px'}}>
-
-<Grid style={{display:'flex',alignItems:'center'}}>
-
-<Typography className={classes.gray} >
-Navigation Menu
-</Typography>
-
-
-<IconButton className={classes.info}>
-<InfoOutlinedIcon/>
-</IconButton>
-
-</Grid>
-
-
-<Button 
-onClick={()=>{
-    history.push('/dashboard/categories/edit')
-}}
-style={{
-    borderRadius:'0px'
-}}
->
-    Add New
-</Button>
-</Grid>
 
 
 
 
-
-
-
-
-<TableContainer style={{marginTop:'5vh'}} component={Paper} >
-
-    <Table>
-        <TableHead>
-            <StyledTableCell align="right"> CATEGORY NAME  </StyledTableCell>
-            <StyledTableCell align="right">PRODUCTS</StyledTableCell>
-            <StyledTableCell align="right">TOTAL PRODUCTS</StyledTableCell>
-            <StyledTableCell align="right">AVAILABILITY</StyledTableCell>
-            <StyledTableCell align="center">STATUS</StyledTableCell>
-        </TableHead>
-
-        <TableBody>
-
-{
-    [...Array(5).keys()].map((i,k)=>(
-        <StyledTableRow key={k} >
-        <StyledTableCell align="right">Wood Beads</StyledTableCell>
-        <StyledTableCell align="right">
-            <Avatar style={{marginLeft:'90%'}} variant="rounded" src="https://cdn2.iconfinder.com/data/icons/flatfaces-everyday-people-square/128/beard_male_man_face_avatar-512.png" />
-        </StyledTableCell>
-        <StyledTableCell align="right">74</StyledTableCell>
-        <StyledTableCell align="right">
-
-
-        {
-    k%2===0?(
-<Typography  className={classes.green}>
-In Stock
-</Typography>
-    ):(
-<Typography  className={classes.red}>
-Out of Stock
-</Typography>
-    )
-}
-
-            
-            </StyledTableCell>
-        <StyledTableCell align="right">
-            
-            <Grid style={{display:'flex',alignItems:'center',justifyContent:'space-around'}}>
-
-{
-    k%2===0?(
-<Typography  className={classes.green}>
-Active
-</Typography>
-    ):(
-<Typography style={{textAlign:'start',width:'2rem'}} className={classes.orange}>
-Inactive
-</Typography>
-    )
-}
-<Grid style={{textAlign:'end',width:'2rem'}}>
-
-<IconButton
-style={{ position:'relative',right:k%2===0&&4 }}
->
-
-<DeleteOutlineIcon
-className={classes.label}
-/>
-
-</IconButton>
-
-</Grid>
-
-
-            </Grid>
-        </StyledTableCell>
-      </StyledTableRow>
-    ))
-}
-        </TableBody>
-    </Table>
-</TableContainer>
 
 
 
