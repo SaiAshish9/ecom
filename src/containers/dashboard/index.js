@@ -49,6 +49,8 @@ const icons=[
         paths:[
             '/dashboard/product',
             '/dashboard/product/products/edit',
+            '/dashboard/product/products/edit/options',
+            '/dashboard/product/products/edit/options/edit',
             '/dashboard/product/categories',
             '/dashboard/product/options'
 

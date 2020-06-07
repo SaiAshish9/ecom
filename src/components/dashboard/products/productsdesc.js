@@ -209,7 +209,8 @@ disabled={
 }
 style={{
     borderRadius:5,
-    fontSize:12
+    fontSize:12,
+    display:history.location.pathname==='/dashboard/product/products/edit/options/edit' && 'none'
 }}
 >
     SAVED OPTIONS 
@@ -232,8 +233,12 @@ style={{
 {
 history.location.pathname==='/dashboard/product/products/edit'?(
     'CREATE NEW OPTION' 
-):(
+):
+history.location.pathname!=='/dashboard/product/products/edit/options/edit'?
+    (
     'ADD AN OTHER OPTION' 
+):(
+   'Edit'
 )
 
 }

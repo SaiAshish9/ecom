@@ -764,17 +764,17 @@ style={{
 <Typography
 className={classes.light}
 >
-L
+Blue
 </Typography>
 <Typography
 className={classes.light}
 >
-M
+Black
 </Typography>
 <Typography
 className={classes.light}
 >
-S
+Brown
 </Typography>
 
 </Box>
