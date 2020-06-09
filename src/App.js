@@ -45,10 +45,10 @@ const App=({classes})=> {
 
 {
   mobileSize?(
-<Route exact path="/dashboard" component={MDashboard}/>
+<Route  path="/dashboard" component={MDashboard}/>
   ):
   (
-<Route exact path="/dashboard" component={Dashboard}/>
+<Route   path="/dashboard" component={Dashboard}/>
   )
 }
 
@@ -60,7 +60,18 @@ const App=({classes})=> {
 <Route  path="/dashboard/apps" component={Dashboard}/>
 <Route  path="/dashboard/services" component={Dashboard}/>
 
+
+{
+
+mobileSize?(
+
+<Route exact path="/dashboard/store" component={MDashboard}/>
+  ):(
 <Route exact path="/dashboard/store" component={Dashboard}/>
+    )
+
+}
+
 <Route  path="/dashboard/store/theme" component={Dashboard}/>
 <Route  path="/dashboard/store/domain" component={Dashboard}/>
 <Route  path="/dashboard/store/domain/edit"  component={Dashboard}/>

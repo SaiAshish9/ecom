@@ -17,10 +17,15 @@ import PaymentDesc from './payment/paymentdesc'
 import Products from './products/products'
 import Theme from './theme'
 import Shipping from './shipping'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
+
+
 
 
 const Store = ({classes}) => {
 
+
+const mediaSize=useMediaQuery('( max-width:450px)')
 
 
     return (
@@ -36,7 +41,6 @@ const Store = ({classes}) => {
 <Sidebar/>
 
 <Switch>
-
 <Route exact path="/dashboard/store" component={Details}/>
 <Route  path="/dashboard/store/theme" component={Theme}/>
 <Route  exact path="/dashboard/store/domain" component={Domain}/>
@@ -47,7 +51,6 @@ const Store = ({classes}) => {
 <Route  exact path="/dashboard/store/payment" component={Payment}/>
 <Route  path="/dashboard/store/payment/edit" component={PaymentDesc}/>
 <Route  path="/dashboard/store/products" component={Products}/>
-
 </Switch>
 
 
