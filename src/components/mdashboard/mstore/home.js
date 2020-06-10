@@ -108,7 +108,7 @@ const Store = ({ classes, history }) => {
           <Btn
             style={{
               width: "9rem",
-              height: "2rem",
+              height: "2.2rem",
               fontSize: 12,
             }}
           >

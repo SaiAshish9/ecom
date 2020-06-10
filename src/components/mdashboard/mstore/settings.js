@@ -54,7 +54,8 @@ fontSize:14
 display="flex"
 flexDirection="column"
 style={{
-    padding:'1.5rem'
+    padding:'1.5rem',
+    marginBottom:'10vh'
 }}
 >
 
