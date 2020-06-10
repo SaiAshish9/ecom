@@ -145,9 +145,8 @@ const Theme = ({ classes, history }) => {
             )}
             <CardActions>
               <Grid container alignItems="center" className={classes.left}>
-                <Typography style={{ width: "70%" }}>Alpha Romoe</Typography>
+                <Typography style={{ width: "65%" }}>Alpha Romoe</Typography>
                 <Divider
-                  style={{ height: "5vh" }}
                   orientation="vertical"
                   flexItem
                 />
