@@ -48,7 +48,11 @@ const options = [
     name: "Store",
     icon: <FaStore />,
     path: "/dashboard/store",
-    paths: ["/dashboard/store", "/dashboard/store/settings"],
+    paths: ["/dashboard/store",
+     "/dashboard/store/settings",
+     "/dashboard/store/details"
+    
+    ],
   },
 ];
 
@@ -70,34 +74,34 @@ const SimpleBottomNavigation = ({ history, classes }) => {
             }}
           >
             <ToggleButton
-            color="primary"
-            style={{
-              border:'none',
-              display:'block',
-            }}
+              color="primary"
+              style={{
+                border: "none",
+                display: "block",
+              }}
             >
               <Typography
                 style={{
                   fontSize: 12,
-                  position:'relative',
-                  top:'1rem'
+                  position: "relative",
+                  top: "1rem",
                 }}
                 className={
-                  history.location.pathname === i.path
+                  i.paths.includes(history.location.pathname)
                     ? classes.main
                     : classes.dark
                 }
               >
                 {i.icon}
               </Typography>
-<br/>
+              <br />
               <Typography
                 style={{
-                  position: 'relative',
-                  bottom:'0.2rem'
+                  position: "relative",
+                  bottom: "0.2rem",
                 }}
                 className={
-                  history.location.pathname === i.path
+                  i.paths.includes(history.location.pathname)
                     ? classes.main
                     : classes.dark
                 }
@@ -118,7 +122,7 @@ const styles = (theme) => ({
     height: "10vh",
     position: "fixed",
     bottom: 0,
-    paddingBottom:10,
+    paddingBottom: 10,
     display: "flex",
     alignItems: "center",
     justifyContent: "space-around",
