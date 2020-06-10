@@ -48,11 +48,13 @@ const options = [
     name: "Store",
     icon: <FaStore />,
     path: "/dashboard/store",
-    paths: ["/dashboard/store",
-     "/dashboard/store/settings",
-     "/dashboard/store/details",
-     "/dashboard/store/theme"
-    
+    paths: [
+      "/dashboard/store",
+      "/dashboard/store/settings",
+      "/dashboard/store/details",
+      "/dashboard/store/theme",
+      "/dashboard/store/domain",
+      "/dashboard/store/domain/edit",
     ],
   },
 ];

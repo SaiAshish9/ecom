@@ -19,13 +19,11 @@ import CardContent from "@material-ui/core/CardContent";
 import { GoCheck } from "react-icons/go";
 import { AiOutlineLaptop } from "react-icons/ai";
 
-
 const links = [
   "https://d85wutc1n854v.cloudfront.net/live/products/icons/WB0CS9DSM.jpg?v=1.0",
   "https://themewagon.com/wp-content/uploads/2018/10/furn.jpg",
-  "https://d85wutc1n854v.cloudfront.net/live/products/icons/WB0CS9DSM.jpg?v=1.0"
+  "https://d85wutc1n854v.cloudfront.net/live/products/icons/WB0CS9DSM.jpg?v=1.0",
 ];
-
 
 const Theme = ({ classes, history }) => {
   return (
@@ -51,7 +49,7 @@ const Theme = ({ classes, history }) => {
         </IconButton>
       </Box>
 
-      <Box style={{ padding: "2rem",marginBottom:'10vh' }}>
+      <Box style={{ padding: "2rem", marginBottom: "10vh" }}>
         <Grid style={{ display: "flex", alignItems: "center" }}>
           <Badge
             overlap="circle"
@@ -146,10 +144,7 @@ const Theme = ({ classes, history }) => {
             <CardActions>
               <Grid container alignItems="center" className={classes.left}>
                 <Typography style={{ width: "65%" }}>Alpha Romoe</Typography>
-                <Divider
-                  orientation="vertical"
-                  flexItem
-                />
+                <Divider orientation="vertical" flexItem />
                 <IconButton>
                   <AiOutlineLaptop className={classes.icon} />
                 </IconButton>
