@@ -50,7 +50,8 @@ const options = [
     path: "/dashboard/store",
     paths: ["/dashboard/store",
      "/dashboard/store/settings",
-     "/dashboard/store/details"
+     "/dashboard/store/details",
+     "/dashboard/store/theme"
     
     ],
   },

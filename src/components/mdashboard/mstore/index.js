@@ -1,16 +1,23 @@
-import React from "react";
+import React,{lazy,Suspense} from "react";
 import { Switch, Route } from "react-router-dom";
-import Home from "./home";
-import Settings from "./settings";
-import Details from "./details"
+import Loader from '../../general/loader'
+
+const Theme =lazy(()=>import("./theme"))
+const Home =lazy(()=>import("./home"))
+const Settings =lazy(()=>import("./settings"))
+const Details =lazy(()=>import("./details"))
+
 
 const Store = () => {
   return (
-    <Switch>
-      <Route exact path="/dashboard/store" component={Home} />
-      <Route path="/dashboard/store/settings" component={Settings} />
-      <Route path="/dashboard/store/details" component={Details} />
-    </Switch>
+    <Suspense fallback={<Loader/>}>
+      <Switch>
+        <Route exact path="/dashboard/store" component={Home} />
+        <Route path="/dashboard/store/settings" component={Settings} />
+        <Route path="/dashboard/store/details" component={Details} />
+        <Route path="/dashboard/store/theme" component={Theme} />
+      </Switch>
+    </Suspense>
   );
 };
 
