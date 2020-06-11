@@ -8,7 +8,7 @@ import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Chip from "@material-ui/core/Chip";
-import Divider from "@material-ui/core/divider";
+import Divider from "@material-ui/core/Divider";
 import Dns from "./editdns";
 import Manage from "./manage";
 
