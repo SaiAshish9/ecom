@@ -1,20 +1,14 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
-import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import { IoIosSpeedometer } from "react-icons/io";
 import { AiFillAppstore } from "react-icons/ai";
 import LoyaltyIcon from "@material-ui/icons/Loyalty";
 import { FaStore } from "react-icons/fa";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { withRouter } from "react-router-dom";
-
 import Paper from "@material-ui/core/Paper";
-
 import withStyles from "@material-ui/core/styles/withStyles";
-
-import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import ToggleButton from "@material-ui/lab/ToggleButton";
@@ -55,6 +49,7 @@ const options = [
       "/dashboard/store/theme",
       "/dashboard/store/domain",
       "/dashboard/store/domain/edit",
+      "/dashboard/store/domain/edit/manage",
     ],
   },
 ];

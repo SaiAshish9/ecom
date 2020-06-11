@@ -8,10 +8,13 @@ import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Chip from "@material-ui/core/Chip";
-import Button from "../../../general/button";
 import Divider from "@material-ui/core/divider";
+import Dns from "./editdns";
+import Manage from "./manage";
 
 const DomainDesc = ({ classes, history }) => {
+  const check = history.location.pathname === "/dashboard/store/domain/edit";
+
   return (
     <Fragment>
       <Box
@@ -65,94 +68,38 @@ const DomainDesc = ({ classes, history }) => {
       </Box>
 
       <Box display="flex" style={{ paddingLeft: "1.5rem" }}>
-        <Box>
-          <Typography style={{ margin: "1rem" }} className={classes.label}>
+        <Box
+          onClick={() => {
+            history.push("/dashboard/store/domain/edit");
+          }}
+        >
+          <Typography
+            style={{ margin: "1rem" }}
+            className={check ? classes.dark : classes.label}
+          >
             DNS
           </Typography>
+          {check && <Box className={classes.highlight}></Box>}
         </Box>
 
-        <Box>
-          <Typography style={{ margin: "1rem" }} className={classes.dark}>
+        <Box
+          onClick={() => {
+            history.push("/dashboard/store/domain/edit/manage");
+          }}
+        >
+          <Typography
+            style={{ margin: "1rem" }}
+            className={check ? classes.label : classes.dark}
+          >
             Manage
           </Typography>
-          <Box className={classes.highlight}></Box>
+          {!check && <Box className={classes.highlight}></Box>}
         </Box>
       </Box>
 
       <Divider />
 
-      <Box
-        display="flex"
-        flexDirection="column"
-        style={{ padding: "1.5rem", marginBottom: "10vh" }}
-      >
-        <Typography
-          style={{ fontSize: 14, textTransform: "uppercase" }}
-          className={classes.light}
-        >
-          Name
-        </Typography>
-
-        <Typography
-          style={{ fontSize: 14, marginBottom: "2rem" }}
-          className={classes.dark}
-        >
-          John Doe
-        </Typography>
-
-        <Typography
-          style={{ fontSize: 14, textTransform: "uppercase" }}
-          className={classes.light}
-        >
-          address
-        </Typography>
-
-        <Typography
-          style={{ fontSize: 14, marginBottom: "2rem" }}
-          className={classes.dark}
-        >
-          19 Koss Landing
-        </Typography>
-
-        <Typography
-          style={{ fontSize: 14, textTransform: "uppercase" }}
-          className={classes.light}
-        >
-          contact number
-        </Typography>
-
-        <Typography
-          style={{ fontSize: 14, marginBottom: "2rem" }}
-          className={classes.dark}
-        >
-          +965 8785844
-        </Typography>
-
-        <Typography
-          style={{ fontSize: 14, textTransform: "uppercase" }}
-          className={classes.light}
-        >
-          Email
-        </Typography>
-
-        <Typography
-          style={{ fontSize: 14, marginBottom: "2rem" }}
-          className={classes.dark}
-        >
-          johndoe@gmail.com
-        </Typography>
-
-        <Button
-          style={{
-            margin: 0,
-            width: "100%",
-            height: "3rem",
-            margin: "20px 0",
-          }}
-        >
-          EDIT DETAILS
-        </Button>
-      </Box>
+      {check ? <Dns /> : <Manage />}
     </Fragment>
   );
 };
@@ -166,7 +113,7 @@ const styles = (theme) => ({
   highlight: {
     borderBottom: `4px solid ${theme.palette.primary.main}`,
     width: "60%",
-    marginLeft: "12%",
+    marginLeft: "18%",
   },
   light: {
     color: theme.palette.primary.lightgray,
