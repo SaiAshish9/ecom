@@ -49,7 +49,11 @@ const options = [
       "/dashboard/store/theme",
       "/dashboard/store/domain",
       "/dashboard/store/domain/edit",
+      "/dashboard/store/shipping",
+      "/dashboard/store/shipping/edit",
       "/dashboard/store/domain/edit/manage",
+      "/dashboard/store/locations",
+      "/dashboard/store/locations/edit",
     ],
   },
 ];

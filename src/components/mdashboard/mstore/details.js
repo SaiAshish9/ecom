@@ -34,9 +34,9 @@ const Details = ({ classes, history }) => {
         justifyContent="space-between"
       >
         <IconButton
-        onClick={()=>{
-            history.push('/dashboard/store/settings')
-        }}
+          onClick={() => {
+            history.push("/dashboard/store/settings");
+          }}
         >
           <ArrowBackIosIcon />
         </IconButton>

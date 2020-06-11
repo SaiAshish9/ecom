@@ -1,14 +1,17 @@
-import React,{lazy,Suspense} from "react";
+import React, { lazy, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
-import Loader from '../../general/loader'
+import Loader from "../../general/loader";
 
-const Theme =lazy(()=>import("./theme"))
-const Home =lazy(()=>import("./home"))
-const Settings =lazy(()=>import("./settings"))
-const Details =lazy(()=>import("./details"))
-const Domain =lazy(()=>import("./domain/domain"))
-const DomainDesc =lazy(()=>import("./domain/editdomain"))
-
+const Theme = lazy(() => import("./theme"));
+const Home = lazy(() => import("./home"));
+const Settings = lazy(() => import("./settings"));
+const Details = lazy(() => import("./details"));
+const Domain = lazy(() => import("./domain/domain"));
+const DomainDesc = lazy(() => import("./domain/editdomain"));
+const Shipping = lazy(() => import("./shipping"));
+const ShippingDesc = lazy(() => import("./shipping/shippingdesc"));
+const Locations = lazy(() => import("./locations"));
+const LocationsDesc = lazy(() => import("./locations/locationsDesc"));
 
 const Store = () => {
   return (
@@ -20,6 +23,13 @@ const Store = () => {
         <Route path="/dashboard/store/theme" component={Theme} />
         <Route exact path="/dashboard/store/domain" component={Domain} />
         <Route path="/dashboard/store/domain/edit" component={DomainDesc} />
+        <Route exact path="/dashboard/store/shipping" component={Shipping} />
+        <Route path="/dashboard/store/shipping/edit" component={ShippingDesc} />
+        <Route exact path="/dashboard/store/locations" component={Locations} />
+        <Route
+          path="/dashboard/store/locations/edit"
+          component={LocationsDesc}
+        />
       </Switch>
     </Suspense>
   );

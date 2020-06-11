@@ -112,7 +112,7 @@ const Store = ({ classes, history }) => {
               fontSize: 12,
             }}
           >
-            <VisibilityIcon style={{ marginRight: 10,fontSize:16 }} />
+            <VisibilityIcon style={{ marginRight: 10, fontSize: 16 }} />
             View Website
           </Btn>
         </Paper>

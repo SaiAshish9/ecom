@@ -19,7 +19,7 @@ const Dns = ({ classes }) => {
       </Typography>
 
       <Paper className={classes.paper}>
-        <Grid className={classes.grid1} style={{marginBottom:5}}>
+        <Grid className={classes.grid1} style={{ marginBottom: 5 }}>
           <Typography style={{ fontSize: 14 }} className={classes.logoTxt}>
             Using Custom Name Server
           </Typography>
@@ -38,7 +38,7 @@ const Dns = ({ classes }) => {
         Records
       </Typography>
 
-      <Paper  style={{height:'15vh'}} className={classes.paper}>
+      <Paper style={{ height: "15vh" }} className={classes.paper}>
         <Grid className={classes.grid2}>
           <Grid className={classes.grid2}>
             <Typography className={classes.light}>NAME SERVERS</Typography>
@@ -85,8 +85,8 @@ const styles = (theme) => ({
     width: "100%",
     display: "flex",
     justifyContent: "space-between",
-    alignItems:"center",
-    color:theme.palette.primary.gray
+    alignItems: "center",
+    color: theme.palette.primary.gray,
   },
   paper: {
     width: "100%",

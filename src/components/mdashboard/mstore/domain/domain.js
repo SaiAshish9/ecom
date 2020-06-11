@@ -135,7 +135,7 @@ const styles = (theme) => ({
   paper: {
     width: "100%",
     height: "28vh",
-    marginTop:'1.5rem',
+    marginTop: "1.5rem",
     border: "1px solid #eee",
     padding: 20,
     cursor: "pointer",

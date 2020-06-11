@@ -28,7 +28,6 @@ const Theme = ({ classes }) => {
   return (
     <Grid lg={9} className={classes.grid}>
       <Paper className={classes.form}>
-    
         <Grid style={{ display: "flex", alignItems: "center" }}>
           <Badge
             overlap="circle"
