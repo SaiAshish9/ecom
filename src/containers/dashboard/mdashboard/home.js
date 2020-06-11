@@ -478,7 +478,7 @@ const styles = (theme) => ({
   navbar: {
     width: "100%",
     height: "10vh",
-    background: "#fff"s,
+    background: "#fff",
     borderBottom: `1px solid ${theme.palette.primary.lightgray}`,
     display: "flex",
     justifyContent: "space-between",
