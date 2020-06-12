@@ -12,6 +12,9 @@ const Shipping = lazy(() => import("./shipping"));
 const ShippingDesc = lazy(() => import("./shipping/shippingdesc"));
 const Locations = lazy(() => import("./locations"));
 const LocationsDesc = lazy(() => import("./locations/locationsDesc"));
+const EditLocation=lazy(() => import("./locations/editlocations"));
+const Payment = lazy(() => import("./payment"))
+const PaymentDesc = lazy(() => import("./payment/editpayment"));
 
 const Store = () => {
   return (
@@ -27,10 +30,17 @@ const Store = () => {
         <Route path="/dashboard/store/shipping/edit" component={ShippingDesc} />
         <Route exact path="/dashboard/store/locations" component={Locations} />
         <Route
+          exact
           path="/dashboard/store/locations/edit"
           component={LocationsDesc}
         />
+        <Route
+          path="/dashboard/store/locations/edit/location"
+          component={EditLocation}
+        />
       </Switch>
+      <Route exact path="/dashboard/store/payment" component={Payment} />
+      <Route path="/dashboard/store/payment/edit" component={PaymentDesc} />
     </Suspense>
   );
 };

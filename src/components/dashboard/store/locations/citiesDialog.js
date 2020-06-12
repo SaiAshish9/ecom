@@ -9,7 +9,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import Btn from "../../../general/button";
 import Check from "../../../general/checkbox";
 
-const CitiesDialog = ({ open, classes, close }) => {
+const CitiesDialog = ({ open, classes, close, mobileView }) => {
   const options = [
     {
       label: "All Kuwait",
@@ -41,11 +41,21 @@ const CitiesDialog = ({ open, classes, close }) => {
   ];
 
   return (
-    <Dialog open={open}>
-      <DialogContent className={classes.dialog}>
+    <Dialog
+      style={{
+        width: mobileView && "100vw",
+      }}
+      open={open}
+    >
+      <DialogContent
+        style={{
+          width: mobileView && "90vw",
+        }}
+        className={classes.dialog}
+      >
         <Grid
           style={{
-            width: "100%",
+            width: mobileView ? "95%" : "100%",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
@@ -66,7 +76,7 @@ const CitiesDialog = ({ open, classes, close }) => {
               key={k}
               style={{
                 margin: "10px 0",
-                width: "100%",
+                width: mobileView ? "95%" : "100%",
                 display: "flex",
                 justifyContent: "space-between",
               }}
@@ -82,7 +92,7 @@ const CitiesDialog = ({ open, classes, close }) => {
         <Btn
           style={{
             borderRadius: "0",
-            width: "100%",
+            width: mobileView ? "95%" : "100%",
             position: "relative",
             right: "0.8rem",
           }}

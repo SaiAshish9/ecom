@@ -54,6 +54,9 @@ const options = [
       "/dashboard/store/domain/edit/manage",
       "/dashboard/store/locations",
       "/dashboard/store/locations/edit",
+      "/dashboard/store/locations/edit/location",
+      "/dashboard/store/payment",
+      "/dashboard/store/payment/edit",
     ],
   },
 ];
