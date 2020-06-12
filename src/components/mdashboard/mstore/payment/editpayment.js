@@ -90,7 +90,7 @@ const PaymentDesc = ({ classes, history }) => {
               className={classes.grid1}
             >
               <Typography
-                style={{ fontSize: 15, margin: "20px" }}
+                style={{ fontSize: 12, margin: "20px" }}
                 className={classes.logoTxt}
               >
                 {i}
