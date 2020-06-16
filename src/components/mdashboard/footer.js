@@ -18,7 +18,10 @@ const options = [
     name: "Dashboard",
     icon: <IoIosSpeedometer />,
     path: "/dashboard",
-    paths: ["/dashboard"],
+    paths: [
+    "/dashboard", 
+    "/dashboard/customers", 
+    "/dashboard/deliveries"],
   },
   {
     name: "Orders",

@@ -6,8 +6,8 @@ import CategoriesDesc from "./categoriesdesc";
 const Category = () => {
   return (
     <Switch>
-      <Route exact path="/dashboard/categories" component={Categories} />
-      <Route path="/dashboard/categories/edit" component={CategoriesDesc} />
+      <Route  exact path="/dashboard/categories" component={Categories} />
+      <Route  path="/dashboard/categories/edit" component={CategoriesDesc} />
     </Switch>
   );
 };

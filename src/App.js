@@ -15,6 +15,7 @@ const Home = lazy(() => import("./containers/homepage"));
 const Auth = lazy(() => import("./containers/auth/auth"));
 const SignUp = lazy(() => import("./containers/auth/signUp"));
 const Login = lazy(() => import("./containers/auth/loginMobile"));
+// const Test = lazy(() => import("./test1"));
 
 const Loader = ({ classes }) => (
   <Backdrop className={classes.backdrop} open={true}>
@@ -40,32 +41,7 @@ const App = ({ classes }) => {
         ) : (
           <Route path="/dashboard" component={Dashboard} />
         )}
-
-        <Route path="/dashboard/orders" component={Dashboard} />
-        <Route path="/dashboard/product" component={Dashboard} />
-        <Route path="/dashboard/categories" component={Dashboard} />
-        <Route path="/dashboard/customers" component={Dashboard} />
-        <Route path="/dashboard/coupons" component={Dashboard} />
-        <Route path="/dashboard/apps" component={Dashboard} />
-        <Route path="/dashboard/services" component={Dashboard} />
-
-        {mobileSize ? (
-          <Route exact path="/dashboard/store" component={MDashboard} />
-        ) : (
-          <Route exact path="/dashboard/store" component={Dashboard} />
-        )}
-
-        <Route path="/dashboard/store/theme" component={Dashboard} />
-        <Route path="/dashboard/store/domain" component={Dashboard} />
-        <Route path="/dashboard/store/domain/edit" component={Dashboard} />
-
-        <Route path="/dashboard/store/shipping" component={Dashboard} />
-        <Route path="/dashboard/store/locations" component={Dashboard} />
-        <Route path="/dashboard/store/payment" component={Dashboard} />
-        <Route path="/dashboard/store/products" component={Dashboard} />
-
-        <Route path="/dashboard/users" component={Dashboard} />
-        <Route path="/dashboard/settings" component={Dashboard} />
+        {/* <Route path="/test" component={Test} /> */}
       </Switch>
     </Suspense>
   );
