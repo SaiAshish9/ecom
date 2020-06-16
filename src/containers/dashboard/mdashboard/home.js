@@ -224,6 +224,9 @@ const MDashboard = ({ classes, history }) => {
           }}
         >
           <Paper
+            onClick={() => {
+              history.push("/dashboard/options/sales");
+            }}
             style={{
               width: "47%",
               height: "20vh",
@@ -256,6 +259,9 @@ const MDashboard = ({ classes, history }) => {
           </Paper>
 
           <Paper
+            onClick={() => {
+              history.push("/dashboard/options/orders");
+            }}
             style={{
               width: "47%",
               height: "20vh",

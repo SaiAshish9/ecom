@@ -5,6 +5,9 @@ import MStore from "../../../components/mdashboard/mstore";
 import MCustomers from "../../../components/mdashboard/mcustomers";
 import BottomNavigation from "../../../components/mdashboard/footer";
 import MDeliveries from "../../../components/mdashboard/mdeliveries";
+import Options_Orders from "../../../components/mdashboard/home/orders"
+import Options_Sales from "../../../components/mdashboard/home/sales";
+
 
 const Dashboard = () => {
   return (
@@ -14,6 +17,8 @@ const Dashboard = () => {
         <Route path="/dashboard/store" component={MStore} />
         <Route path="/dashboard/customers" component={MCustomers} />
         <Route path="/dashboard/deliveries" component={MDeliveries} />
+        <Route path="/dashboard/options/orders" component={Options_Orders} />}
+        <Route path="/dashboard/options/sales" component={Options_Sales }/>
       </Switch>
 
       <BottomNavigation />

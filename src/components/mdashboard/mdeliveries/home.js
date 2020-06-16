@@ -33,7 +33,7 @@ const Customers = ({ classes, history }) => {
             fontSize: 14,
           }}
         >
-          Deliveries
+    Orders
         </Typography>
       </Paper>
 
