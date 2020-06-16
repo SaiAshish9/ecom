@@ -26,7 +26,7 @@ const FormDialog = ({ classes, width, history }) => {
     }
   }, [width]);
 
-  const { display, toggleFormDisplay } = useContext(FormDialogContext);
+  const {  toggleFormDisplay } = useContext(FormDialogContext);
 
   return (
     <Backdrop

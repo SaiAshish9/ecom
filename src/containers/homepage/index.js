@@ -10,7 +10,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import { RiLogoutBoxRLine } from "react-icons/ri";
 import IconButton from "@material-ui/core/IconButton";
-import { Zoom, Fade } from "@material-ui/core";
+import { Zoom} from "@material-ui/core";
 
 const Homepage = ({ classes, history }) => {
   return (
@@ -19,6 +19,7 @@ const Homepage = ({ classes, history }) => {
         <Box display="flex" alignItems="center">
           <img
             src={Logo}
+            alt="logo"
             style={{
               width: "3rem",
             }}
@@ -91,7 +92,7 @@ const Homepage = ({ classes, history }) => {
             in={true}
             style={{ width: "80%", marginRight: "5rem", marginBottom: "3rem" }}
           >
-            <img style={{ width: "80%" }} src={Home} />
+            <img alt="img" style={{ width: "80%" }} src={Home} />
           </Zoom>
         </Box>
       </Box>

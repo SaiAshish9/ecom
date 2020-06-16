@@ -3,7 +3,6 @@ import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
 import { withRouter } from "react-router-dom";
 import withStyles from "@material-ui/core/styles/withStyles";
-import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import AddIcon from "@material-ui/icons/Add";

@@ -74,7 +74,7 @@ const Theme = ({ classes }) => {
               >
                 <CardMedia
                   style={{
-                    opacity: k == 0 && 0.4,
+                    opacity: k === 0 && 0.4,
                   }}
                   component="img"
                   alt="Contemplative Reptile"

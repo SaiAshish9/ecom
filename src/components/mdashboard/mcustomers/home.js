@@ -3,7 +3,6 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import { withRouter } from "react-router-dom";
 import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
-import Btn from "../../general/button";
 import IconButton from "@material-ui/core/IconButton";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import Typography from "@material-ui/core/Typography";

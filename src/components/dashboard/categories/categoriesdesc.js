@@ -15,12 +15,13 @@ const CategoriesDesc = ({ classes, history }) => {
   const [file, setFile] = useState(null);
 
   const handleChange = (e) => {
-    var file = e.target.files[0];
+    var file1 = e.target.files[0];
     var reader = new FileReader();
     reader.onload = (e) => {
       setFile(reader.result);
+      console.log(file)
     };
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(file1);
   };
 
   return (

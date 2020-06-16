@@ -69,7 +69,6 @@ const Manage = ({ classes }) => {
 
       <Button
         style={{
-          margin: 0,
           width: "100%",
           height: "3rem",
           margin: "20px 0",

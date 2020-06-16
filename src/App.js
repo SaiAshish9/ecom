@@ -1,4 +1,4 @@
-import React, { useState, Suspense, lazy } from "react";
+import React, { Suspense, lazy } from "react";
 import "./App.css";
 
 import Verification from "./containers/auth/verification";
@@ -7,7 +7,6 @@ import { Switch, Route } from "react-router-dom";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Backdrop from "@material-ui/core/Backdrop";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import Grid from "@material-ui/core/Grid";
 
 const Dashboard = lazy(() => import("./containers/dashboard"));
 const MDashboard = lazy(() => import("./containers/dashboard/mdashboard"));

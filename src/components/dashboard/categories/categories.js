@@ -15,7 +15,6 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Avatar from "@material-ui/core/Avatar";
-import Switch from "@material-ui/core/Switch";
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 

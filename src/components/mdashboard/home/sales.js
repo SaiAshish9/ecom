@@ -33,6 +33,7 @@ const Sales = ({ classes, history }) => {
           SALES
         </Typography>
       </Paper>
+      <Box></Box>
     </Fragment>
   );
 };

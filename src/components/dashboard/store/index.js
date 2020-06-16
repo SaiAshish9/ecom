@@ -4,9 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Sidebar from "./sidebar";
-
 import { Switch, Route } from "react-router-dom";
-
 import Details from "./details";
 import Domain from "./domain/domain";
 import DomainDesc from "./domain/domaindesc";
@@ -17,10 +15,8 @@ import PaymentDesc from "./payment/paymentdesc";
 import Products from "./products/products";
 import Theme from "./theme";
 import Shipping from "./shipping";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const Store = ({ classes }) => {
-  const mediaSize = useMediaQuery("( max-width:450px)");
 
   return (
     <Container className={classes.container}>

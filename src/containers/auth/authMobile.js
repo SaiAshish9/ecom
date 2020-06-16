@@ -11,6 +11,7 @@ const AuthMobile = ({ classes, history }) => {
     <Grid className={classes.grid}>
       <img
         src={BagPic}
+        alt="pic"
         style={{
           width: "15rem",
           height: "15rem",

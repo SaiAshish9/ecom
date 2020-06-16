@@ -1,6 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import BottomNavigation from "@material-ui/core/BottomNavigation";
 import { IoIosSpeedometer } from "react-icons/io";
 import { AiFillAppstore } from "react-icons/ai";
 import LoyaltyIcon from "@material-ui/icons/Loyalty";

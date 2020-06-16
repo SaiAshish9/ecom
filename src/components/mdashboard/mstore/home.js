@@ -2,9 +2,7 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Box from "@material-ui/core/Box";
-import IconButton from "@material-ui/core/IconButton";
 import { withRouter } from "react-router-dom";
-import Avatar from "@material-ui/core/Avatar";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import Paper from "@material-ui/core/Paper";
 import VisibilityIcon from "@material-ui/icons/Visibility";
@@ -17,7 +15,6 @@ import {
   FaStore,
   FaUsers,
   FaAppStoreIos,
-  FaUser,
 } from "react-icons/fa";
 import LaptopMacIcon from "@material-ui/icons/LaptopMac";
 import { BsCreditCard } from "react-icons/bs";

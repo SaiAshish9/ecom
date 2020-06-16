@@ -8,7 +8,7 @@ import { FormDialogContext } from "../../../contexts/FormDialog";
 import { withRouter } from "react-router-dom";
 
 const Navbar = ({ classes, history }) => {
-  const { display, toggleFormDisplay } = useContext(FormDialogContext);
+  // const { display, toggleFormDisplay } = useContext(FormDialogContext);
 
   const links = [
     {

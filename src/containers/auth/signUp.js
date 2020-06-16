@@ -175,6 +175,7 @@ const SignUp = ({ classes, history }) => {
           <Typography style={{ fontSize: 12, textAlign: "center" }}>
             Already have an account?
             <a
+              href=""
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();

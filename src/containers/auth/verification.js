@@ -7,12 +7,10 @@ import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import Button from "../../components/general/button";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import Logo from "../../assets/bag.png";
 
 const Verification = ({ classes, history }) => {
-  const mobileSize = useMediaQuery("( max-width:650px )");
 
   return (
     <Grid className={classes.grid}>

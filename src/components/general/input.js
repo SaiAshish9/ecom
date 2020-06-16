@@ -27,10 +27,9 @@ const Input = ({
       {type !== "password" && rows ? (
         <textArea
           rows={rows}
-          style={{ ...style }}
+          style={{ ...style, height: "7rem" }}
           cols={7}
           placeholder={placeholder}
-          style={{ height: "7rem" }}
           className={classes.txtInput}
         />
       ) : (
@@ -74,7 +73,6 @@ const Input = ({
         <Grid style={{ height: "7vh" }}>
           <input
             type={type}
-            style={{ width: "80%" }}
             style={{ ...style }}
             placeholder={placeholder}
             className={classes.txtInput}

@@ -5,7 +5,6 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { withRouter } from "react-router-dom";
 import IconButton from "@material-ui/core/IconButton";
-import Button from "../../general/button";
 import ImportExportIcon from "@material-ui/icons/ImportExport";
 import Search from "../../general/search";
 import Table from "@material-ui/core/Table";
@@ -14,10 +13,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import Avatar from "@material-ui/core/Avatar";
-import Switch from "@material-ui/core/Switch";
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
-import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
