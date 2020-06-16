@@ -31,6 +31,7 @@ const Verification = ({ classes, history }) => {
         >
           <img
             src={Logo}
+            alt="logo"
             style={{
               width: "30vw",
             }}

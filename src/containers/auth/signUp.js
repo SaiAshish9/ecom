@@ -174,8 +174,7 @@ const SignUp = ({ classes, history }) => {
           </Button>
           <Typography style={{ fontSize: 12, textAlign: "center" }}>
             Already have an account?
-            <a
-              href=""
+            <p
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
@@ -185,7 +184,7 @@ const SignUp = ({ classes, history }) => {
               className={classes.primary}
             >
               LOGIN
-            </a>
+            </p>
           </Typography>
         </Grid>
       )}
