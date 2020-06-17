@@ -84,6 +84,7 @@ const SimpleBottomNavigation = ({ history, classes }) => {
           >
             <ToggleButton
               color="primary"
+              value={k}
               style={{
                 border: "none",
                 display: "block",

@@ -73,10 +73,6 @@ const LocationsDesc = ({ classes, history }) => {
           <Typography style={{ color: "#000" }} component="h6" variant="h6">
             Add An Address
           </Typography>
-
-          <IconButton>
-            <CloseIcon />
-          </IconButton>
         </Grid>
 
         <Grid>

@@ -4,10 +4,12 @@ import "./App.css";
 import Verification from "./containers/auth/verification";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { Switch, Route } from "react-router-dom";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Backdrop from "@material-ui/core/Backdrop";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 const Dashboard = lazy(() => import("./containers/dashboard"));
+const MDashboard = lazy(() => import("./containers/dashboard/mdashboard"));
 const Home = lazy(() => import("./containers/homepage"));
 const Auth = lazy(() => import("./containers/auth/auth"));
 const SignUp = lazy(() => import("./containers/auth/signUp"));
@@ -21,6 +23,8 @@ const Loader = ({ classes }) => (
 );
 
 const App = ({ classes }) => {
+  const mobileSize = useMediaQuery("( max-width:650px )");
+
   return (
     <Suspense fallback={<Loader classes={classes} />}>
       <Switch>
@@ -30,7 +34,13 @@ const App = ({ classes }) => {
         <Route exact path="/signUp" component={SignUp} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/verification" component={Verification} />
-        <Route path="/dashboard" component={Dashboard} />
+
+        {mobileSize ? (
+          <Route path="/dashboard" component={MDashboard} />
+        ) : (
+          <Route path="/dashboard" component={Dashboard} />
+        )}
+        {/* <Route path="/test" component={Test} /> */}
       </Switch>
     </Suspense>
   );

@@ -1,18 +1,38 @@
-import React from "react";
+import React,{useState,createContext} from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { withRouter } from "react-router-dom";
 import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
-import Btn from "../../general/button";
+import Btn from "../../../general/button";
 import IconButton from "@material-ui/core/IconButton";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import Typography from "@material-ui/core/Typography";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import Options from "../../../constants/settings";
+import Options from "../../../../constants/settings";
+import Dialog1 from './dialog1';
+import Dialog2 from "./dialog2";
+
+ export const LaunchContext = createContext(null);
 
 const Settings = ({ classes, history }) => {
+
+  const [openDialog1,setOpenDialog1]=useState(false)
+  const [openDialog2, setOpenDialog2] = useState(false);
+
+
   return (
-    <React.Fragment>
+    <LaunchContext.Provider
+      value={{
+         toggleDialog1:()=>{
+          setOpenDialog1(!openDialog1);
+        },       
+        toggleDialog2:()=>{
+          setOpenDialog2(!openDialog2);
+        }
+      
+      }
+        }
+    >
       <Paper elevation={0} className={classes.nav}>
         <IconButton
           onClick={() => {
@@ -69,11 +89,16 @@ const Settings = ({ classes, history }) => {
             width: "100%",
             height: "3rem",
           }}
+          onClick={() => {
+            setOpenDialog1(true);
+          }}
         >
           LAUNCH STORE NOW
         </Btn>
+        {openDialog1 && <Dialog1 mobileView={true} open={true} />}
+        {openDialog2 && <Dialog2 mobileView={true} open={true} />}
       </Box>
-    </React.Fragment>
+    </LaunchContext.Provider>
   );
 };
 
