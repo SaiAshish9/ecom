@@ -5,7 +5,6 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import { withRouter } from "react-router-dom";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import Box from "@material-ui/core/Box";
-import CloseIcon from "@material-ui/icons/Close";
 import Grid from "@material-ui/core/Grid";
 import Btn from "../../../general/button";
 
