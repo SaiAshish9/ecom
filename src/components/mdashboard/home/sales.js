@@ -8,7 +8,6 @@ import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import Typography from "@material-ui/core/Typography";
 import Chart from "../../general/chart";
 import { IoIosTrendingUp } from "react-icons/io";
-import Avatar from "@material-ui/core/Avatar";
 
 const Sales = ({ classes, history }) => {
   return (
