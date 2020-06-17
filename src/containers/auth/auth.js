@@ -36,6 +36,7 @@ const Homepage = ({ classes, login, signUp, createStore, history }) => {
               style={{ width: "100vw", height: "90vh" }}
             >
               <Grid
+              className="animate__animated animate__fadeInUp"
                 item
                 xs={12}
                 sm={12}
@@ -76,6 +77,7 @@ const Homepage = ({ classes, login, signUp, createStore, history }) => {
                 component="div"
               >
                 <img
+                  className="animate__animated animate__zoomIn"
                   src="https://image.freepik.com/free-vector/flat-store-facade-with-awning_23-2147542588.jpg"
                   alt="img"
                   style={{
