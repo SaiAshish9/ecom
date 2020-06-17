@@ -14,7 +14,7 @@ const Home = lazy(() => import("./containers/homepage"));
 const Auth = lazy(() => import("./containers/auth/auth"));
 const SignUp = lazy(() => import("./containers/auth/signUp"));
 const Login = lazy(() => import("./containers/auth/loginMobile"));
-// const Test = lazy(() => import("./test1"));
+// const Test = lazy(() => import("./test2"));
 
 const Loader = ({ classes }) => (
   <Backdrop className={classes.backdrop} open={true}>
