@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 0,
     width: "100%",
     [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(3),
+      // marginLeft: theme.spacing(3),
       // width: 'auto',
     },
   },
@@ -25,7 +25,17 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 2),
     height: "100%",
     position: "absolute",
-    color: theme.palette.primary.main,
+    color:theme.palette.primary.main,
+    pointerEvents: "none",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  searchIcon1: {
+    padding: theme.spacing(0, 2),
+    height: "100%",
+    position: "absolute",
+    color:theme.palette.primary.gray,
     pointerEvents: "none",
     display: "flex",
     alignItems: "center",
@@ -60,15 +70,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PrimarySearchAppBar() {
+export default function PrimarySearchAppBar({gray}) {
   const classes = useStyles();
 
   return (
     <div className={classes.grow}>
       <Toolbar>
         <div className={classes.search}>
-          <div className={classes.searchIcon}>
-            <SearchIcon />
+          <div className={gray?classes.searchIcon1:classes.searchIcon}>
+            <SearchIcon    />
           </div>
           <InputBase
             placeholder="Search…"

@@ -23,13 +23,6 @@ const Loader = ({ classes }) => (
 
 const App = ({ classes }) => {
   var mobileSize = useMediaQuery("( max-width:650px )");
-  //   const [loadingState, setLoadingState] = useState(true);
-
-  //   useEffect(() => {
-  //     setTimeout(() => {
-  //       setLoadingState(false);
-  //   }, 2000);
-  // }, []);
 
   return (
     <Suspense fallback={<Loader classes={classes} />}>

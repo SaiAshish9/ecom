@@ -7,7 +7,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import { withRouter } from "react-router-dom";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import CreateIcon from "@material-ui/icons/Create";
-import Btn from "../../general/button";
+import Btn from "../../../general/button";
 
 const data = [
   {
@@ -43,7 +43,11 @@ const Details = ({ classes, history }) => {
 
         <Typography>STORE DETAILS</Typography>
 
-        <IconButton>
+        <IconButton
+          onClick={() => {
+            history.push("/dashboard/store/details/edit");
+          }}
+        >
           <CreateIcon />
         </IconButton>
       </Box>

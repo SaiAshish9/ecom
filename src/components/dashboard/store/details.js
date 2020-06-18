@@ -1,13 +1,9 @@
 import React from "react";
-
 import Grid from "@material-ui/core/Grid";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Paper from "@material-ui/core/Paper";
-
 import Switch from "@material-ui/core/Switch";
-
 import { withRouter } from "react-router-dom";
-
 import Btn from "../../general/button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Button from "@material-ui/core/Button";

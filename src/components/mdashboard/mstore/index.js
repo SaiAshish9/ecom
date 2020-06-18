@@ -6,7 +6,9 @@ const Theme = lazy(() => import("./theme"));
 const Home = lazy(() => import("./home"));
 const Settings = lazy(() => import("./settings"));
 const Details = lazy(() => import("./details"));
+const EditDetails = lazy(() => import("./details/editdetails"));
 const Domain = lazy(() => import("./domain/domain"));
+const NewDomain = lazy(() => import("./domain/newdomain"));
 const DomainDesc = lazy(() => import("./domain/editdomain"));
 const Shipping = lazy(() => import("./shipping"));
 const ShippingDesc = lazy(() => import("./shipping/shippingdesc"));
@@ -22,10 +24,12 @@ const Store = () => {
       <Switch>
         <Route exact path="/dashboard/store" component={Home} />
         <Route path="/dashboard/store/settings" component={Settings} />
-        <Route path="/dashboard/store/details" component={Details} />
+        <Route exact path="/dashboard/store/details" component={Details} />
+        <Route path="/dashboard/store/details/edit" component={EditDetails} />
         <Route path="/dashboard/store/theme" component={Theme} />
         <Route exact path="/dashboard/store/domain" component={Domain} />
         <Route path="/dashboard/store/domain/edit" component={DomainDesc} />
+        <Route path="/dashboard/store/domain/new" component={NewDomain} />
         <Route exact path="/dashboard/store/shipping" component={Shipping} />
         <Route path="/dashboard/store/shipping/edit" component={ShippingDesc} />
         <Route exact path="/dashboard/store/locations" component={Locations} />

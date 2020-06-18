@@ -92,6 +92,9 @@ const Domain = ({ classes, history }) => {
         </Paper>
 
         <Button
+          onClick={() => {
+            history.push("/dashboard/store/domain/new");
+          }}
           style={{
             width: "100%",
             height: "3rem",
