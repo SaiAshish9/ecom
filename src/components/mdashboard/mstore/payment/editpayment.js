@@ -1,9 +1,7 @@
 import React, { Fragment } from "react";
 import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { withRouter } from "react-router-dom";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
@@ -11,30 +9,14 @@ import Divider from "@material-ui/core/Divider";
 import Checkbox from "../../../general/checkbox";
 import Btn from "../../../general/button";
 import Switch from "@material-ui/core/Switch";
+import MNavbar from "../../../general/mnavbar";
 
 const cardData = ["KNET", "Visa / Mastercard", "Amex", "Cash on Delivery"];
 
 const PaymentDesc = ({ classes, history }) => {
   return (
     <Fragment>
-      <Box
-        display="flex"
-        className={classes.nav}
-        alignItems="center"
-        justifyContent="space-between"
-      >
-        <IconButton
-          onClick={() => {
-            history.push("/dashboard/store/payment");
-          }}
-        >
-          <ArrowBackIosIcon />
-        </IconButton>
-        <Typography style={{ marginRight: "36vw" }} className={classes.dark}>
-          CHARGES
-        </Typography>
-      </Box>
-
+      <MNavbar title="CHARGES" link="/dashboard/store/payment" />
       <Box style={{ padding: "1.5rem", marginBottom: "10vh" }}>
         <Paper
           style={{
@@ -179,11 +161,6 @@ const PaymentDesc = ({ classes, history }) => {
 };
 
 const styles = (theme) => ({
-  nav: {
-    height: "10vh",
-    padding: 20,
-    borderBottom: `1px solid ${theme.palette.primary.lightgray} `,
-  },
   light: {
     color: theme.palette.primary.lightgray,
     fontSize: 12,

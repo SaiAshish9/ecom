@@ -2,12 +2,11 @@ import React, { Fragment } from "react";
 import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { withRouter } from "react-router-dom";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import CreateIcon from "@material-ui/icons/Create";
 import Btn from "../../../general/button";
+import MNavbar from "../../../general/mnavbar";
 
 const data = [
   {
@@ -24,33 +23,15 @@ const data = [
   },
 ];
 
-const Details = ({ classes, history }) => {
+const Details = ({ classes }) => {
   return (
     <Fragment>
-      <Box
-        display="flex"
-        className={classes.nav}
-        alignItems="center"
-        justifyContent="space-between"
-      >
-        <IconButton
-          onClick={() => {
-            history.push("/dashboard/store/settings");
-          }}
-        >
-          <ArrowBackIosIcon />
-        </IconButton>
-
-        <Typography>STORE DETAILS</Typography>
-
-        <IconButton
-          onClick={() => {
-            history.push("/dashboard/store/details/edit");
-          }}
-        >
-          <CreateIcon />
-        </IconButton>
-      </Box>
+      <MNavbar
+        title="STORE DETAILS"
+        iconLink="/dashboard/store/details/edit"
+        icon={<CreateIcon/>}
+        link="/dashboard/store/settings"
+      />
 
       <Box
         className={classes.main}

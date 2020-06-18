@@ -1,12 +1,11 @@
 import React, { Fragment} from "react";
 import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { withRouter } from "react-router-dom";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Btn from "../../../general/button";
+import MNavbar from "../../../general/mnavbar";
 
 
 const options = [
@@ -40,25 +39,12 @@ const options = [
 const LocationsDesc = ({ classes, history }) => {
   return (
     <Fragment>
-      <Box
-        display="flex"
-        className={classes.nav}
-        alignItems="center"
-        justifyContent="space-between"
-      >
-        <IconButton
-          onClick={() => {
-            history.push("/dashboard/store/locations/edit");
-          }}
-        >
-          <ArrowBackIosIcon />
-        </IconButton>
-
-        <Typography className={classes.dark}>STORE ADDRESS</Typography>
-        <IconButton color="primary" style={{ fontSize: 16 }}>
-          Skip
-        </IconButton>
-      </Box>
+     
+     <MNavbar
+     skip
+     title="STORE ADDRESS"
+     link="/dashboard/store/locations/edit"
+     />
 
       <Box style={{ padding: "1.5rem", marginBottom: "10vh" }}>
         <Grid
@@ -109,11 +95,6 @@ const LocationsDesc = ({ classes, history }) => {
 };
 
 const styles = (theme) => ({
-  nav: {
-    height: "10vh",
-    padding: 20,
-    borderBottom: `1px solid ${theme.palette.primary.lightgray} `,
-  },
   dark: {
     color: theme.palette.primary.gray,
   },

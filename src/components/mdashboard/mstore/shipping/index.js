@@ -1,37 +1,19 @@
 import React, { Fragment } from "react";
 import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { withRouter } from "react-router-dom";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Button from "../../../general/button";
 import Switch from "@material-ui/core/Switch";
 import Divider from "@material-ui/core/Divider";
+import MNavbar from "../../../general/mnavbar";
 
 const Shipping = ({ classes, history }) => {
   return (
     <Fragment>
-      <Box
-        display="flex"
-        className={classes.nav}
-        alignItems="center"
-        justifyContent="space-between"
-      >
-        <IconButton
-          onClick={() => {
-            history.push("/dashboard/store/settings");
-          }}
-        >
-          <ArrowBackIosIcon />
-        </IconButton>
-        <Typography className={classes.dark}>SHIPPING</Typography>
-        <IconButton color="primary" style={{ fontSize: 16 }}>
-          Skip
-        </IconButton>
-      </Box>
+      <MNavbar title="SHIPPING" skip link="/dashboard/store/settings" />
 
       <Box style={{ padding: "1.5rem", marginBottom: "10vh" }}>
         <Typography className={classes.label}>AVG PREPARING ORDER</Typography>
@@ -247,17 +229,9 @@ const styles = (theme) => ({
     padding: 10,
     color: "#999",
   },
-  nav: {
-    height: "10vh",
-    padding: 20,
-    borderBottom: `1px solid ${theme.palette.primary.lightgray} `,
-  },
   light: {
     color: theme.palette.primary.lightgray,
     fontSize: 12,
-  },
-  dark: {
-    color: theme.palette.primary.gray,
   },
 });
 

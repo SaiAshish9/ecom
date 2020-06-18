@@ -3,7 +3,6 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { withRouter } from "react-router-dom";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Avatar from "@material-ui/core/Avatar";
@@ -18,6 +17,7 @@ import Divider from "@material-ui/core/Divider";
 import CardContent from "@material-ui/core/CardContent";
 import { GoCheck } from "react-icons/go";
 import { AiOutlineLaptop } from "react-icons/ai";
+import MNavbar from "../../general/mnavbar";
 
 const links = [
   "https://d85wutc1n854v.cloudfront.net/live/products/icons/WB0CS9DSM.jpg?v=1.0",
@@ -28,26 +28,7 @@ const links = [
 const Theme = ({ classes, history }) => {
   return (
     <Fragment>
-      <Box
-        display="flex"
-        className={classes.nav}
-        alignItems="center"
-        justifyContent="space-between"
-      >
-        <IconButton
-          onClick={() => {
-            history.push("/dashboard/store/settings");
-          }}
-        >
-          <ArrowBackIosIcon />
-        </IconButton>
-
-        <Typography className={classes.dark}>STORE THEME</Typography>
-
-        <IconButton color="primary" style={{ fontSize: 16 }}>
-          Skip
-        </IconButton>
-      </Box>
+      <MNavbar title="STORE THEME" skip link="/dashboard/store/settings" />
 
       <Box style={{ padding: "2rem", marginBottom: "10vh" }}>
         <Grid style={{ display: "flex", alignItems: "center" }}>
@@ -162,14 +143,6 @@ const Theme = ({ classes, history }) => {
 };
 
 const styles = (theme) => ({
-  nav: {
-    height: "10vh",
-    padding: 20,
-    borderBottom: `1px solid ${theme.palette.primary.lightgray} `,
-  },
-  dark: {
-    color: theme.palette.primary.gray,
-  },
   logoTxt: {
     color: theme.palette.primary.gray,
   },

@@ -11,29 +11,15 @@ import Chip from "@material-ui/core/Chip";
 import Divider from "@material-ui/core/Divider";
 import Dns from "./editdns";
 import Manage from "./manage";
+import MNavbar from "../../../general/mnavbar";
 
 const DomainDesc = ({ classes, history }) => {
   const check = history.location.pathname === "/dashboard/store/domain/edit";
 
   return (
     <Fragment>
-      <Box
-        display="flex"
-        className={classes.nav}
-        alignItems="center"
-        justifyContent="space-between"
-      >
-        <IconButton
-          onClick={() => {
-            history.push("/dashboard/store/settings");
-          }}
-        >
-          <ArrowBackIosIcon />
-        </IconButton>
-        <Typography style={{ marginRight: "27vw" }} className={classes.dark}>
-          PRIMARY DOMAIN
-        </Typography>
-      </Box>
+    
+    <MNavbar title="PRIMARY DOMAIN" link="/dashboard/store/domain" />
 
       <Box style={{ padding: "1.5rem" }}>
         <Paper
@@ -105,11 +91,6 @@ const DomainDesc = ({ classes, history }) => {
 };
 
 const styles = (theme) => ({
-  nav: {
-    height: "10vh",
-    padding: 20,
-    borderBottom: `1px solid ${theme.palette.primary.lightgray} `,
-  },
   highlight: {
     borderBottom: `4px solid ${theme.palette.primary.main}`,
     width: "60%",
@@ -121,9 +102,6 @@ const styles = (theme) => ({
   },
   label: {
     color: theme.palette.primary.lightgray,
-  },
-  dark: {
-    color: theme.palette.primary.gray,
   },
   chip: {
     color: theme.palette.primary.green,

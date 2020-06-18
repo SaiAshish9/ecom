@@ -1,11 +1,10 @@
 import React, { Fragment } from "react";
 import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { withRouter } from "react-router-dom";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import Box from "@material-ui/core/Box";
 import Btn from "../../../general/button";
+import MNavbar from "../../../general/mnavbar";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Button from "@material-ui/core/Button";
 import Switch from "@material-ui/core/Switch";
@@ -13,27 +12,7 @@ import Switch from "@material-ui/core/Switch";
 const EditDetails = ({ classes, history }) => {
   return (
     <Fragment>
-      <Box
-        display="flex"
-        className={classes.nav}
-        alignItems="center"
-        justifyContent="space-between"
-      >
-        <IconButton
-          onClick={() => {
-            history.push("/dashboard/store/settings");
-          }}
-        >
-          <ArrowBackIosIcon />
-        </IconButton>
-
-        <Typography className={classes.dark}>STORE DETAILS</Typography>
-
-        <IconButton color="primary" style={{ fontSize: 16 }}>
-          Skip
-        </IconButton>
-      </Box>
-
+      <MNavbar title="STORE DETAILS" skip link="/dashboard/store/details" />
       <Box style={{ padding: "1.5rem", marginBottom: "10vh" }}>
         <Typography className={classes.Typography}>ABOUT US</Typography>
         <textarea className={classes.input} rows={7} />
@@ -116,12 +95,14 @@ const EditDetails = ({ classes, history }) => {
           rows={7}
         />
         <Btn
-        style={{
-            margin:"20px 0", 
-            width:"100%",
-            height:"3rem"
-        }}
-        >SAVE DETAILS</Btn>
+          style={{
+            margin: "20px 0",
+            width: "100%",
+            height: "3rem",
+          }}
+        >
+          SAVE DETAILS
+        </Btn>
       </Box>
     </Fragment>
   );

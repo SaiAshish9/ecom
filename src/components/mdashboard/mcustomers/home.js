@@ -3,11 +3,10 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import { withRouter } from "react-router-dom";
 import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
-import IconButton from "@material-ui/core/IconButton";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import Typography from "@material-ui/core/Typography";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Divider from "@material-ui/core/Divider";
+import MNavbar from "../../general/mnavbar";
 
 const Options = [
   {
@@ -36,30 +35,7 @@ const Options = [
 const Customers = ({ classes, history }) => {
   return (
     <React.Fragment>
-      <Paper elevation={0} className={classes.nav}>
-        <IconButton
-          onClick={() => {
-            history.push("/dashboard");
-          }}
-          style={{
-            marginLeft: 10,
-          }}
-        >
-          <ArrowBackIosIcon />
-        </IconButton>
-
-        <Typography
-          className={classes.dark}
-          style={{
-            justifyContent: "center",
-            marginLeft: "26vw",
-            fontSize: 14,
-          }}
-        >
-          Customers
-        </Typography>
-      </Paper>
-
+    <MNavbar title="Customers" link="/dashboard"/>
       <Box
         display="flex"
         flexDirection="column"
@@ -138,13 +114,6 @@ const Customers = ({ classes, history }) => {
 const styles = (theme) => ({
   light: {
     color: theme.palette.primary.lightgray,
-  },
-  nav: {
-    width: "100%",
-    height: "10vh",
-    display: "flex",
-    alignItems: "center",
-    borderBottom: `1px solid ${theme.palette.primary.lightgray} `,
   },
   dark: {
     color: theme.palette.primary.gray,

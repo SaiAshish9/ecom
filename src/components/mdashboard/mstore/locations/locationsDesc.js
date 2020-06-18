@@ -3,7 +3,6 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { withRouter } from "react-router-dom";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import Box from "@material-ui/core/Box";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
@@ -12,6 +11,7 @@ import Btn from "../../../general/button";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import CitiesDialog from "../../../dashboard/store/locations/citiesDialog";
+import MNavbar from "../../../general/mnavbar";
 
 const days = [
   "Monday",
@@ -28,23 +28,7 @@ const LocationsDesc = ({ classes, history }) => {
 
   return (
     <Fragment>
-      <Box
-        display="flex"
-        className={classes.nav}
-        alignItems="center"
-        justifyContent="space-between"
-      >
-        <IconButton
-          onClick={() => {
-            history.push("/dashboard/store/settings");
-          }}
-        >
-          <ArrowBackIosIcon />
-        </IconButton>
-        <Typography style={{ marginRight: "36vw" }} className={classes.dark}>
-          STORE 1
-        </Typography>
-      </Box>{" "}
+      <MNavbar title="STORE 1" link="/dashboard/store/locations" />
       <Box style={{ marginBottom: "10vh", padding: "1.5rem" }}>
         <Typography className={classes.label}>STORE NAME</Typography>
 
@@ -147,11 +131,6 @@ const LocationsDesc = ({ classes, history }) => {
 };
 
 const styles = (theme) => ({
-  nav: {
-    height: "10vh",
-    padding: 20,
-    borderBottom: `1px solid ${theme.palette.primary.lightgray} `,
-  },
   btn: {
     fontSize: 12,
     background: theme.palette.primary.lightgray,

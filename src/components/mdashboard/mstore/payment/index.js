@@ -3,7 +3,6 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { withRouter } from "react-router-dom";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
@@ -11,7 +10,7 @@ import PhotoCamera from "@material-ui/icons/PhotoCamera";
 import Avatar from "@material-ui/core/Avatar";
 import CheckIcon from "@material-ui/icons/Check";
 import Btn from "../../../general/button";
-
+import MNavbar from "../../../general/mnavbar";
 
 const Payment = ({ classes, history }) => {
   const [checked, setChecked] = useState(false);
@@ -29,25 +28,11 @@ const Payment = ({ classes, history }) => {
 
   return (
     <Fragment>
-      <Box
-        display="flex"
-        className={classes.nav}
-        alignItems="center"
-        justifyContent="space-between"
-      >
-        <IconButton
-          onClick={() => {
-            history.push("/dashboard/store/settings");
-          }}
-        >
-          <ArrowBackIosIcon />
-        </IconButton>
-        <Typography className={classes.dark}>ECOM PAY</Typography>
-        <IconButton color="primary" style={{ fontSize: 16 }}>
-          Skip
-        </IconButton>
-      </Box>
-
+      <MNavbar
+      title="ECOM PAY"
+      skip
+      link="/dashboard/store/settings"
+      />
       <Box style={{ padding: "1.5rem", marginBottom: "10vh" }}>
         <Grid style={{ display: "flex", justifyContent: "space-between" }}>
           <Paper variant="outlined" className={classes.uploadPaper}>
@@ -132,56 +117,48 @@ const Payment = ({ classes, history }) => {
             rows={7}
           />
           <Grid style={{ display: "flex", alignItems: "center" }}>
+            {checked ? (
+              <IconButton
+                className={classes.iconBtn}
+                onClick={() => setChecked(false)}
+              >
+                <CheckIcon style={{ fontSize: 12, fontWeight: "bold" }} />
+              </IconButton>
+            ) : (
+              <IconButton
+                onClick={() => setChecked(true)}
+                className={classes.iconBtn1}
+              ></IconButton>
+            )}
 
-          {checked ? (
-            <IconButton
-              className={classes.iconBtn}
-              onClick={() => setChecked(false)}
-            >
-              <CheckIcon style={{ fontSize: 12, fontWeight: "bold" }} />
-            </IconButton>
-          ) : (
-            <IconButton
-              onClick={() => setChecked(true)}
-              className={classes.iconBtn1}
-            ></IconButton>
-          )}
-
-          <p className={classes.label} style={{ fontSize: 12 }}>
-            I agree with
-            <span className={classes.span} style={{ fontSize: 15 }}>
-              Terms & Conditions
-            </span>
-            of Ecom.
-          </p>
-</Grid>
+            <p className={classes.label} style={{ fontSize: 12 }}>
+              I agree with
+              <span className={classes.span} style={{ fontSize: 15 }}>
+                Terms & Conditions
+              </span>
+              of Ecom.
+            </p>
+          </Grid>
         </Grid>
 
-<Btn
-onClick={() =>{
-  history.push('/dashboard/store/payment/edit')
-}}
-style={{
-  width: '100%',
-  margin:"10px 0",
-  height:"3rem"
-}}
->
-  CREATE ECOMPAY ACCOUNT
-</Btn>
-
-
+        <Btn
+          onClick={() => {
+            history.push("/dashboard/store/payment/edit");
+          }}
+          style={{
+            width: "100%",
+            margin: "10px 0",
+            height: "3rem",
+          }}
+        >
+          CREATE ECOMPAY ACCOUNT
+        </Btn>
       </Box>
     </Fragment>
   );
 };
 
 const styles = (theme) => ({
-  nav: {
-    height: "10vh",
-    padding: 20,
-    borderBottom: `1px solid ${theme.palette.primary.lightgray} `,
-  },
   light: {
     color: theme.palette.primary.lightgray,
     fontSize: 12,
