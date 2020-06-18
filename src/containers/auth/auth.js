@@ -8,20 +8,15 @@ import LoginDialog from "../../components/auth/loginDialog";
 import SignUpDialog from "../../components/auth/signUpDialog";
 import CreateStoreDialog from "../../components/auth/createStoreDialog";
 import { FormDialogContext } from "../../contexts/FormDialog";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import { withRouter } from "react-router-dom";
-import AuthMobile from "./authMobile";
 
-const Homepage = ({ classes, login, signUp, createStore, history }) => {
+const Homepage = ({ classes, login, signUp, history }) => {
   const [display, setDisplay] = useState(false);
-  const mobileSize = useMediaQuery("( max-width:650px )");
 
   return (
     <React.Fragment>
-      {mobileSize ? (
-        <AuthMobile />
-      ) : (
+
         <FormDialogContext.Provider
           value={{
             display,
@@ -96,7 +91,6 @@ const Homepage = ({ classes, login, signUp, createStore, history }) => {
             </Grid>
           </Typography>
         </FormDialogContext.Provider>
-      )}
     </React.Fragment>
   );
 };
