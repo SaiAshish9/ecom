@@ -42,14 +42,22 @@ const Subscriptions = ({ classes}) => {
           </Grid>
 
           <Grid
-            style={{ display: "flex", flexDirection:"row-reverse",flexWrap: "wrap", marginBottom: "5vh" }}
+            style={{
+              display: "flex",
+              flexDirection: "row-reverse",
+              flexWrap: "wrap",
+              marginBottom: "5vh",
+            }}
           >
             <Paper className={classes.paper}>
               <Grid className={classes.grid1}>
                 <Typography className={classes.light}>1 user</Typography>
                 <Typography className={classes.light}>1 store</Typography>
                 <Typography className={classes.dark}>9 KD/Month</Typography>
-                <Typography className={classes.light} style={{ fontSize: 12 }}>
+                <Typography
+                  className={classes.light}
+                  style={{ fontSize: 12, textAlign: "center" }}
+                >
                   All prices are excl. VAT.
                 </Typography>
                 <Button
@@ -70,7 +78,10 @@ const Subscriptions = ({ classes}) => {
                 <Typography className={classes.light}>5 users</Typography>
                 <Typography className={classes.light}>5 stores</Typography>
                 <Typography className={classes.dark}>19 KD/Month</Typography>
-                <Typography className={classes.light} style={{ fontSize: 12 }}>
+                <Typography
+                  className={classes.light}
+                  style={{ fontSize: 12, textAlign: "center" }}
+                >
                   All prices are excl. VAT.
                 </Typography>
                 <Button
@@ -91,7 +102,10 @@ const Subscriptions = ({ classes}) => {
                 <Typography className={classes.light}>15 users</Typography>
                 <Typography className={classes.light}>15 stores</Typography>
                 <Typography className={classes.dark}>19 KD/Month</Typography>
-                <Typography className={classes.light} style={{ fontSize: 12 }}>
+                <Typography
+                  className={classes.light}
+                  style={{ fontSize: 12, textAlign: "center" }}
+                >
                   All prices are excl. VAT.
                 </Typography>
                 <Button
@@ -131,8 +145,7 @@ const styles = (theme) => ({
     flexDirection: "column",
   },
   paper: {
-    width: "47%",
-    height: "27vh",
+    width: "45%",
     border: "1px solid #eee",
     paddingTop: 10,
     cursor: "pointer",
