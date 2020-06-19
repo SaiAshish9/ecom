@@ -19,8 +19,9 @@ const MNotifications = ({ classes }) => {
         flexDirection="column"
       >
         <img
-         className="animate__animated animate__swing"
+          className="animate__animated animate__swing"
           src={BellImg}
+          alt="bell"
           style={{
             width: "10rem",
             margin:20
