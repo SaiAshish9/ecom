@@ -9,6 +9,8 @@ import Options_Orders from "../../../components/mdashboard/home/orders"
 import Options_Sales from "../../../components/mdashboard/home/sales";
 import MSettings from "../../../components/mdashboard/msettings"
 import MSubscriptions from "../../../components/mdashboard/msubscriptions";
+import MNotifications from "../../../components/mdashboard/mnotifications";
+import MOrders from "../../../components/mdashboard/morders";
 
 const Dashboard = () => {
   return (
@@ -20,8 +22,10 @@ const Dashboard = () => {
         <Route path="/dashboard/subscriptions" component={MSubscriptions} />
         <Route path="/dashboard/customers" component={MCustomers} />
         <Route path="/dashboard/deliveries" component={MDeliveries} />
+        <Route path="/dashboard/notifications" component={MNotifications} />
         <Route path="/dashboard/options/orders" component={Options_Orders} />
         <Route path="/dashboard/options/sales" component={Options_Sales} />
+        <Route path="/dashboard/orders" component={MOrders} />
       </Switch>
       <BottomNavigation />
     </React.Fragment>

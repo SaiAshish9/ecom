@@ -15,17 +15,19 @@ const Navbar = ({ link,classes, history,title,skip,icon,iconLink }) => {
         alignItems="center"
         justifyContent="center"
       >
-        <IconButton
-          style={{
-            position: "absolute",
-            left: "5vw",
-          }}
-          onClick={() => {
-            history.push(link);
-          }}
-        >
-          <ArrowBackIosIcon />
-        </IconButton>
+        {link && (
+          <IconButton
+            style={{
+              position: "absolute",
+              left: "5vw",
+            }}
+            onClick={() => {
+              history.push(link);
+            }}
+          >
+            <ArrowBackIosIcon />
+          </IconButton>
+        )}
         <Typography className={classes.dark}>{title}</Typography>
         {skip && (
           <IconButton
@@ -41,10 +43,10 @@ const Navbar = ({ link,classes, history,title,skip,icon,iconLink }) => {
         )}
         {icon && (
           <IconButton
-           onClick={()=>{
-               history.push(iconLink)
-           }}
-           className={classes.dark}
+            onClick={() => {
+              history.push(iconLink);
+            }}
+            className={classes.dark}
             style={{
               position: "absolute",
               right: "5vw",
