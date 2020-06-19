@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-
 import withStyles from "@material-ui/core/styles/withStyles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Button from "../../general/button";
-
 import { withRouter } from "react-router-dom";
-
 import Switch from "@material-ui/core/Switch";
 
 const Domain = ({ classes, history }) => {

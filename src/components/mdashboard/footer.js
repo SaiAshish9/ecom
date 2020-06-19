@@ -63,6 +63,9 @@ const options = [
       "/dashboard/store/locations/edit/location",
       "/dashboard/store/payment",
       "/dashboard/store/payment/edit",
+      "/dashboard/settings",
+      "/dashboard/settings/preferences",
+      "/dashboard/subscriptions",
     ],
   },
 ];

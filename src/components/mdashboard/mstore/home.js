@@ -24,6 +24,7 @@ const options = [
   {
     name: "Online Store Settings",
     icon: <FaStore />,
+    path:"/dashboard/store/settings"
   },
   {
     name: "Customers",
@@ -52,14 +53,17 @@ const options = [
   {
     name: "Subscriptions",
     icon: <BsCreditCard />,
+    path:"/dashboard/subscriptions"
   },
   {
     name: "Settings",
     icon: <FiSettings />,
+    path:"/dashboard/settings"
   },
   {
     name: "Logout",
     icon: <RiLogoutBoxRLine />,
+    path:"/"
   },
 ];
 
@@ -117,7 +121,7 @@ const Store = ({ classes, history }) => {
         {options.map((i, k) => (
           <Box
             onClick={() => {
-              history.push("/dashboard/store/settings");
+              history.push(i.path);
             }}
             key={k}
             display="flex"
