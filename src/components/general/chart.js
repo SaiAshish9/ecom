@@ -123,7 +123,7 @@ const Graph = ({ classes, width }) => {
 
   return (
     <Fragment>
-      <Paper elevation={0}>
+      <Paper elevation={0} className="animate__animated animate__fadeIn">
         <Box
           style={{
             padding: "1rem",

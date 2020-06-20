@@ -30,9 +30,9 @@ const options = [
     path: "/dashboard/orders",
     paths: [
       "/dashboard/orders",
-      "/dashboard/pending",
-      "/dashboard/completed",
-      "/dashboard/cancelled",
+      "/dashboardorders//pending",
+      "/dashboard/orders/completed",
+      "/dashboard/orders/cancelled",
       "/dashboard/orders/products",
       "/dashboard/orders/clientDetails"
     ],

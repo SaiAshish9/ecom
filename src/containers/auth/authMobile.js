@@ -11,6 +11,7 @@ const AuthMobile = ({ classes, history }) => {
     <Grid className={classes.grid}>
       <img
         src={BagPic}
+        className="animate__animated animate__fadeIn"
         alt="pic"
         style={{
           width: "15rem",
