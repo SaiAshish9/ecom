@@ -9,146 +9,153 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
-import Paper from "@material-ui/core/Paper";
-import Btn from "../../general/button";
+import { Switch, Route,withRouter } from "react-router-dom";
+import Home from './home'
+import Pending from "./pending";
+import Completed from "./completed"
+import Cancelled from "./cancelled"
+import Products from "./products"
+import ClientDetails from "./clientDetails"
 
-const Orders = ({ classes }) => {
+const Orders = ({ classes,history }) => {
   const [status, setStatus] = useState(0);
-  const [value, setValue] = useState(0);
 
-  const tabbarOptions = ["New", "Pending", "Completed", "Cancelled"];
+  const tabbarOptions = [
+    {
+      name: "New",
+      path: "/dashboard/orders",
+    },
+    {
+      name: "Pending",
+      path: "/dashboard/orders/pending",
+    },
+    {
+      name: "Completed",
+      path: "/dashboard/orders/completed",
+    },
+    {
+      name: "Cancelled",
+      path: "/dashboard/orders/cancelled",
+    },
+  ];
 
   return (
     <Fragment>
-      <Box
-        style={{ height: "10vh", padding: "1.5rem" }}
-        display="flex"
-        justifyContent="space-between"
-        alignItems="center"
-      >
-        <Typography style={{ fontSize: 20 }} className={classes.dark}>
-          Orders
-        </Typography>
-        <Box display="flex" alignItems="center">
-          <Typography className={classes.light}>Store</Typography>
-
-          <Select
-            value={status}
-            onChange={(e) => {
-              setStatus(e.target.value);
-            }}
-            className={classes.select}
-            inputProps={{
-              classes: {
-                icon: classes.icon,
-              },
-            }}
-          >
-            <MenuItem value={0}>
-              <Typography className={classes.dark}>Busy</Typography>
-            </MenuItem>
-            <MenuItem value={1}>
-              <Typography className={classes.dark}>Active</Typography>
-            </MenuItem>
-          </Select>
-
-          <Avatar variant="rounded" outlined className={classes.btn}>
-            <Button>
-              <SearchIcon />
-            </Button>
-          </Avatar>
-        </Box>
-      </Box>
-
-      <Box display="flex" justifyContent="space-between">
-        {tabbarOptions.map((i, k) => (
+      {![
+        "/dashboard/orders/products",
+        "/dashboard/orders/clientDetails",
+      ].includes(history.location.pathname) && (
+        <Box>
           <Box
-            onClick={() => {
-              setValue(k);
-            }}
-            style={{ width: "25%", padding: "10px" }}
+            style={{ height: "10vh", padding: "1.5rem" }}
             display="flex"
-            className={value === k ? classes.activeTab : classes.tab}
+            justifyContent="space-between"
             alignItems="center"
-            key={k}
-            justifyContent="center"
           >
-            <Typography
-              className={value === k ? classes.dark : classes.light}
-              style={{ fontSize: 14 }}
-            >
-              {i}
+            <Typography style={{ fontSize: 20 }} className={classes.dark}>
+              Orders
             </Typography>
+            <Box display="flex" alignItems="center">
+              <Typography className={classes.light}>Store</Typography>
+
+              <Select
+                value={status}
+                onChange={(e) => {
+                  setStatus(e.target.value);
+                }}
+                className={classes.select}
+                inputProps={{
+                  classes: {
+                    icon: classes.icon,
+                  },
+                }}
+              >
+                <MenuItem value={0}>
+                  <Typography className={classes.dark}>Busy</Typography>
+                </MenuItem>
+                <MenuItem value={1}>
+                  <Typography className={classes.dark}>Active</Typography>
+                </MenuItem>
+              </Select>
+
+              <Avatar variant="rounded" outlined className={classes.btn}>
+                <Button>
+                  <SearchIcon />
+                </Button>
+              </Avatar>
+            </Box>
           </Box>
-        ))}
-      </Box>
-      <Box
-        // onClick={() => history.push("/dashboard/store/locations/edit")}
-        style={{ position: "fixed", right: "7vw", bottom: "15vh" }}
-      >
-        <Fab color="primary" aria-label="add">
-          <AddIcon />
-        </Fab>
-      </Box>
+
+          <Box display="flex" justifyContent="space-between">
+            {tabbarOptions.map((i, k) => (
+              <Box
+                onClick={() => {
+                  history.push(i.path);
+                }}
+                style={{ width: "25%", padding: "10px" }}
+                display="flex"
+                className={
+                  history.location.pathname === i.path
+                    ? classes.activeTab
+                    : classes.tab
+                }
+                alignItems="center"
+                key={k}
+                justifyContent="center"
+              >
+                <Typography
+                  className={
+                    history.location.pathname === i.path
+                      ? classes.dark
+                      : classes.light
+                  }
+                  style={{ fontSize: 14 }}
+                >
+                  {i.name}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+          <Box
+            onClick={() => history.push("/dashboard/orders/products")}
+            style={{
+              position: "fixed",
+              right: "7vw",
+              bottom: "15vh",
+              zIndex: 2,
+            }}
+          >
+            <Fab color="primary" aria-label="add">
+              <AddIcon />
+            </Fab>
+          </Box>
+        </Box>
+      )}
+
       <Box
         style={{
-          padding: "1.5rem",
+          padding: ![
+        "/dashboard/orders/products",
+        "/dashboard/orders/clientDetails",
+      ].includes(history.location.pathname)
+      && "1.5rem",
+          marginBottom: "10vh",
         }}
       >
-        <Paper className={classes.paper}>
-          <Box display="flex" justifyContent="space-between">
-            <Box style={{ width: "70%" }} display="flex" flexDirection="column">
-              <Typography style={{ fontSize: 14 }} className={classes.dark}>
-                # 10352
-              </Typography>
-              <Typography
-                style={{ fontSize: 12, margin: "10px 0" }}
-                className={classes.dark}
-              >
-                99- Beads
-              </Typography>
-              <Typography
-                style={{ fontSize: 12, margin: "10px 0" }}
-                className={classes.light}
-              >
-                Ahmed Salem - Jun 04, 2019
-              </Typography>
-              <Typography
-                style={{ fontSize: 16, margin: "10px 0" }}
-                className={classes.dark}
-              >
-                125 KWD
-              </Typography>
-            </Box>
-            <Avatar
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQdQ4YVcPDZKQwChl8loPLB9ZJ_DzH-sfAmACfmT34gSpOCT101&usqp=CAU"
-              style={{
-                height: "20vh",
-                width: "35%",
-              }}
-              variant="rounded"
-            />{" "}
-          </Box>
-          <Box display="flex" justifyContent="space-between">
-            <Btn
-              style={{
-                marginLeft: 0,
-                borderRadius: 10,
-                background:'#eee'
-              }}
-            >
-              Reject
-            </Btn>
-            <Btn
-              style={{
-                marginLeft: 0,
-                borderRadius: 10,
-              }}
-            >
-              Accept
-            </Btn>
-          </Box>
-        </Paper>
+        <Switch>
+          <Route exact path="/dashboard/orders" component={Home} />
+          <Route path="/dashboard/orders/pending" component={Pending} />
+          <Route
+            path="/dashboard/orders/completed"
+            component={Completed}
+          />{" "}
+          <Route path="/dashboard/orders/cancelled" component={Cancelled} />
+          <Route path="/dashboard/orders/products" component={Products} />
+          <Route
+            path="/dashboard/orders/clientDetails"
+            component={ClientDetails}
+          />
+        </Switch>
       </Box>
     </Fragment>
   );
@@ -190,10 +197,6 @@ const styles = (theme) => ({
   activeTab: {
     borderBottom: `2px solid ${theme.palette.primary.main}`,
   },
-  paper: {
-    width: "100%",
-    padding: "1rem",
-  }
 });
 
-export default withStyles(styles)(Orders);
+export default withRouter(withStyles(styles)(Orders))

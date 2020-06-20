@@ -28,7 +28,14 @@ const options = [
     name: "Orders",
     icon: <AiFillAppstore />,
     path: "/dashboard/orders",
-    paths: ["/dashboard/orders"],
+    paths: [
+      "/dashboard/orders",
+      "/dashboard/pending",
+      "/dashboard/completed",
+      "/dashboard/cancelled",
+      "/dashboard/orders/products",
+      "/dashboard/orders/clientDetails"
+    ],
   },
   {
     name: "Products",

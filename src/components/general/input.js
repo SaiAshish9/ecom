@@ -21,13 +21,13 @@ const Input = ({
 
   return (
     <Grid style={{ display: "flex", flexDirection: "column" }}>
-      <label style={{ marginBottom: 10 }} className={classes.label}>
+      <label style={{ margin: "10px 0" }} className={classes.label}>
         {label}
       </label>
       {type !== "password" && rows ? (
         <textArea
           rows={rows}
-          style={{ ...style, height: "7rem" }}
+          style={{ ...style, height: "7rem", margin: "10px 0" }}
           cols={7}
           placeholder={placeholder}
           className={classes.txtInput}
@@ -37,7 +37,7 @@ const Input = ({
         !select && (
           <input
             type={type}
-            style={{ ...style }}
+            style={{ ...style, margin: "10px 0" }}
             placeholder={placeholder}
             className={classes.txtInput}
           />
@@ -45,35 +45,37 @@ const Input = ({
       )}
 
       {select && (
-        <Select
-          value={1}
-          //   onChange={handleChange}
-          className={classes.select}
-          label="Age"
-          placeholder="Clothes"
-          variant="outlined"
-          margin="normal"
-        >
-          <MenuItem style={{ fontSize: 12, border: "none" }} value={1}>
-            Choose Category
-          </MenuItem>
-          <MenuItem style={{ fontSize: 12 }} value={10}>
-            Ten
-          </MenuItem>
-          <MenuItem style={{ fontSize: 12 }} value={20}>
-            Twenty
-          </MenuItem>
-          <MenuItem style={{ fontSize: 12 }} value={30}>
-            Thirty
-          </MenuItem>
-        </Select>
+        <React.Fragment>
+          <Select
+            value={1}
+            //   onChange={handleChange}
+            className={classes.select}
+            label="Age"
+            placeholder="Clothes"
+            variant="outlined"
+            margin="normal"
+          >
+            <MenuItem style={{ fontSize: 12, border: "none" }} value={1}>
+              {placeholder || "Choose Category"}
+            </MenuItem>
+            <MenuItem style={{ fontSize: 12 }} value={10}>
+              Ten
+            </MenuItem>
+            <MenuItem style={{ fontSize: 12 }} value={20}>
+              Twenty
+            </MenuItem>
+            <MenuItem style={{ fontSize: 12 }} value={30}>
+              Thirty
+            </MenuItem>
+          </Select>
+        </React.Fragment>
       )}
 
       {type === "password" && (
         <Grid style={{ height: "7vh" }}>
           <input
             type={type}
-            style={{ ...style }}
+            style={{ ...style, margin: "10px 0" }}
             placeholder={placeholder}
             className={classes.txtInput}
           />
