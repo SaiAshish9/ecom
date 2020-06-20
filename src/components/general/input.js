@@ -45,7 +45,6 @@ const Input = ({
       )}
 
       {select && (
-        <React.Fragment>
           <Select
             value={1}
             //   onChange={handleChange}
@@ -68,14 +67,13 @@ const Input = ({
               Thirty
             </MenuItem>
           </Select>
-        </React.Fragment>
       )}
 
       {type === "password" && (
-        <Grid style={{ height: "7vh" }}>
+        <Grid style={{ height: "7vh",margin: "10px 0" }}>
           <input
             type={type}
-            style={{ ...style, margin: "10px 0" }}
+            style={{ ...style }}
             placeholder={placeholder}
             className={classes.txtInput}
           />
