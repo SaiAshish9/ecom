@@ -1,5 +1,3 @@
-- **Demo Preview Link**
-https://ecomapp.netlify.com/
 - **Ecom code base architecture**
 [Ecom code base architecture.pdf](https://github.com/SaiAshish9/ecom/files/4812604/Ecom.code.base.architecture.pdf)
 - **Next Vs React**
